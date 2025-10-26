@@ -121,88 +121,162 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 
 ![Aba Ports](img/Aba-Ports.png)
 
-Certifique-se de haver registrado a aplicação usuario no arquivo `settings.py`:
+> Somente continue a partir desse ponto se o site (projeto) Django já foi criado e o repositório original já está atualizado (sincronizado).
 
-```python
-# Application definition
+1. Crie uma aplicação chamada `usuario` (sim, você pode usar esse nome).
+    ```bash
+    python manage.py startapp usuario
+    ```
 
-INSTALLED_APPS = [
-   "django.contrib.admin",
-   "django.contrib.auth",
-   "django.contrib.contenttypes",
-   "django.contrib.sessions",
-   "django.contrib.messages",
-   "django.contrib.staticfiles",
-   "usuario",
-   "nomeRelativoAoMeuTema",
-]
-```
+1. Registre a aplicação `usuario` no arquivo `settings.py`:
 
-Configure as origens aceitáveis para o Django incluindo a seguinte lista no seu arquivo `settings.py`:
-```python
-CSRF_TRUSTED_ORIGINS = [
-   'https://localhost:8000',
-   'https://127.0.0.1:8000',
-]
-```
+    ```python
+    # Application definition
 
-Informe a rota que deve ser seguida após o login criando a seguinte variável no arquivo `settings.py`. Note a `/` antes e depois da rota. Substitua meuTema pela rota adequada. Informe também a página seguinte ao logout.
-```python
-LOGIN_REDIRECT_URL = '/meuTema/home/'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
-```
+    INSTALLED_APPS = [
+      "django.contrib.admin",
+      "django.contrib.auth",
+      "django.contrib.contenttypes",
+      "django.contrib.sessions",
+      "django.contrib.messages",
+      "django.contrib.staticfiles",
+      "usuario",     # <<= inclua essa linha
+      "nomeRelativoAoMeuTema",
+    ]
+    ```
 
-Inclua as rotas de `django.contrib.auth.urls` no seu arquivo `urls.py` principal, localizado na pasta MeuSite/MeuSite (troque MeuSite pelo nome do seu projeto). Veja a figura a seguir.
+1. Configure as origens aceitáveis para o Django incluindo a seguinte linha no seu arquivo `settings.py`:
+    ```python
+    CORS_ORIGIN_ALLOW_ALL = True
+    ```
 
-Ao incluir essa path, as seguintes rotas são automaticamente incluídas no seu site (acrescente a URL do seu projeto à rota):
-- accounts/login/
-    - Nome 'login'
-    - Necessita da página registration/login.html
-    - Usa a variável settings.LOGIN_REDIRECT_URL
-    - Método GET
-- accounts/logout/
-    - Nome 'logout'
-    - Usa a variável settings.LOGOUT_REDIRECT_URL
-    - Somente método POST
-- accounts/password_change/
-    - Nome 'password_change'
+1. Informe a rota que deve ser seguida após o login criando a seguinte variável no arquivo `settings.py`. Note a `/` antes e depois da rota. Substitua meuTema pela rota adequada. Informe também a página seguinte ao logout.
+    ```python
+    LOGIN_REDIRECT_URL = '/meuTema/home/'
+    LOGOUT_REDIRECT_URL = '/accounts/login/'
+    ```
+
+1. Inclua as rotas de `django.contrib.auth.urls` no seu arquivo `urls.py` principal, localizado na pasta `MeuSite/MeuSite` (troque `MeuSite` pelo nome do seu projeto). Veja a figura a seguir - o seu arquivo deve estar parecido com esse:
+    ```python
+    """
+    URL configuration for MeuSite project.
+
+    The `urlpatterns` list routes URLs to views. For more information please see:
+        https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    Examples:
+    Function views
+        1. Add an import:  from my_app import views
+        2. Add a URL to urlpatterns:  path('', views.home, name='home')
+    Class-based views
+        1. Add an import:  from other_app.views import Home
+        2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+    Including another URLconf
+        1. Import the include() function: from django.urls import include, path
+        2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    """
+
+    from django.contrib import admin
+    from django.urls import path
+    from django.urls.conf import include
+
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path("meuTema/", include("nomeRelativoAoMeuTema.urls")),
+        path("usuario/", include("usuario.urls")),
+        # A linha abaixo deve ser incluída
+        # As outras linhas devem aparecer em outras etapas
+        # Não as inclua!
+        path('accounts/', include('django.contrib.auth.urls')),
+        path('nomeRelativoAoMeuTema/', include('nomeRelativoAoMeuTema.urls')),
+    ]
+    ```
+
+    Ao incluir essa path, as seguintes rotas são automaticamente incluídas no seu site (acrescente a URL do seu projeto à rota):
+    - accounts/login/
+      - Nome 'login'
+      - Necessita da página registration/login.html
+      - Usa a variável settings.LOGIN_REDIRECT_URL
+      - Método GET
+    - accounts/logout/
+      - Nome 'logout'
+      - Usa a variável settings.LOGOUT_REDIRECT_URL
+      - Somente método POST
+    - accounts/password_change/
+      - Nome 'password_change'
     - accounts/password_change/done/
-    - Nome 'password_change_done'
-- accounts/password_reset/
-    - Nome 'password_reset'
-- accounts/password_reset/done/
-    - Nome 'password_reset_done'
-- accounts/reset/<uidb64>/<token>/
-    - Nome 'password_reset_confirm'
-- accounts/reset/done/
-    - Nome 'password_reset_complete'
+      - Nome 'password_change_done'
+    - accounts/password_reset/
+      - Nome 'password_reset'
+    - accounts/password_reset/done/
+      - Nome 'password_reset_done'
+    - accounts/reset/<uidb64>/<token>/
+      - Nome 'password_reset_confirm'
+    - accounts/reset/done/
+      - Nome 'password_reset_complete'
 
-Em crie a pasta `templates/registration/` dentro da pasta usuario. Nessa pasta crie o arquivo `login.html`. Use esse exemplo para criar o arquivo. Ele deve conter, pelo menos, o formulário para o usuário entrar com as credenciais.
+1. Crie a pasta `templates/registration/` dentro da pasta usuario. 
+    Nessa pasta crie o arquivo `login.html`. 
+    Use esse exemplo para criar o arquivo. 
+    Ele deve conter, pelo menos, o formulário para o usuário entrar com as credenciais. Esse é um exemplo básico de formulário de autenticação. 
+    Ele deve ser modificado para ficar igual ao que foi projetado e desenhado no **Figma**.
 
-Crie links no seu site para o usuário poder fazer login e logout!
+    ```html
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <title>Login</title>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+    </body>
+    </html>
+    ```
 
-Proteja as páginas que somente podem ser acessadas após o login usando o decorador `@login_required` nas funções dos `views` como mostrado no exemplo a seguir:
-```python
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-@login_required
-def paginaSecreta(request):
-  # pode haver mais código aqui!
-  return render(request, 'seguranca/paginaSecreta.html')
-```
+1. Crie links no seu site para o usuário poder fazer login e logout!
+    - Exemplo de link para login:
+    ```python
+    <a href="{% url 'login' %}">Link</a>
+    ```
+    - Exemplo de link para logout:
+    ```python
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+    </form>
+    ```
+    >  logout tem que usar método POST, por isso o uso do formulário com a tag `<form>`.
 
-Se for para proteger um view que está definido em uma classe, extenda a classe para ser derivada também de LoginRequiredMixin como mostra o exemplo a seguir:
-```python
-from django.contrib.auth.mixins import LoginRequiredMixin
-class ClasseProtegida(LoginRequiredMixin, View):
-  def get(self, request, *args, **kwargs):
-    # pode haver mais código aqui!
-    return render(request, 'chatsec/inicio.html')
-   
-  def post(self, request, *args, **kwargs):
-    # pode haver mais código aqui!
-    return render(request, 'chatsec/inicio.html')
-```
+1. Opcionalmente proteja as páginas que somente podem ser acessadas após o login usando o decorador `@login_required` nas funções dos `views` como mostrado no exemplo a seguir:
+    ```python
+    from django.shortcuts import render
+    from django.contrib.auth.decorators import login_required
+    @login_required
+    def paginaSecreta(request):
+      # pode haver mais código aqui!
+      return render(request, 'seguranca/paginaSecreta.html')
+    ```
+
+    Se for para proteger um view que está definido em uma classe, extenda a classe para ser derivada também de LoginRequiredMixin como mostra o exemplo a seguir:
+    ```python
+    from django.contrib.auth.mixins import LoginRequiredMixin
+    class ClasseProtegida(LoginRequiredMixin, View):
+      def get(self, request, *args, **kwargs):
+        # pode haver mais código aqui!
+        return render(request, 'chatsec/inicio.html')
+      
+      def post(self, request, *args, **kwargs):
+        # pode haver mais código aqui!
+        return render(request, 'chatsec/inicio.html')
+    ```
 
 ## Base de Dados
 > tempo estimado: menos de 3h-estudante

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "usuario", 
     "nomeRelativoAoMeuTema",
+    'entrada',
 ]
 
 MIDDLEWARE = [
@@ -123,11 +124,13 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+'''
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost:8000',
     'https://127.0.0.1:8000',
 ]
+'''
+CORS_ORIGIN_ALLOW_ALL = True
 
 LOGIN_REDIRECT_URL = '/meuTema/home/'  # Substitua por qualquer URL desejada
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # Substitua por qualquer URL desejada
-
