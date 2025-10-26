@@ -7,7 +7,7 @@
 
 ## Tarefas
 
-- Criar site baseado em Django
+- [Criar site baseado em Django](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#site-baseado-em-django)
 - Atualizar o arquivo README.md
 - Implementar autenticação de usuário
 - Alimentar base de dados
