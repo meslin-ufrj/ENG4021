@@ -8,11 +8,11 @@
 ## Tarefas
 
 - [Criar site baseado em Django](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#site-baseado-em-django)
-- Atualizar o arquivo README.md
-- Implementar autenticação de usuário
-- Alimentar base de dados
-- Implementar consulta
-- Implementar filtro na consulta
+- [Atualizar o arquivo README.md](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#arquivo-readmemd)
+- [Implementar autenticação de usuário](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#autentica%C3%A7%C3%A3o-de-usu%C3%A1rio)
+- [Alimentar base de dados](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#base-de-dados)
+- [Implementar consulta](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#p%C3%A1gina-de-consulta)
+- [Implementar filtro na consulta](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#consulta-com-filtro)
 
 ## Site baseado em Django
 > Tempo estimado: menos de 1h-estudante
