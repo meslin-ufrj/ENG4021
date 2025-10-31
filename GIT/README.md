@@ -222,7 +222,7 @@ git push origin main
 - [Origem e local divergem](#origem-e-local-divergem)
 - [O mesmo arquivo editado na origem e no clone](#o-mesmo-arquivo-editado-na-origem-e-no-clone)
 
-- [Alterações locais não commitadas]()
+- [Alterações locais não commitadas](#altera%C3%A7%C3%B5es-locais-n%C3%A3o-commitadas)
 
 ## Desistir de um commit porque não consegue fazer push
 
@@ -419,7 +419,7 @@ Vá para o terminal do Codespace.
 
 ---
 
-## Alterações locais não comitadas
+## Alterações locais não commitadas
 
 ### Sintoma
 
