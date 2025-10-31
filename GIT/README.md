@@ -248,7 +248,11 @@ Se não funcionar...
 
 ```bash
 <<<<<<< HEAD
+<<<<<<< HEAD
 git reset --mixed HEAD~1
+=======
+git reset --soft HEAD~1
+>>>>>>> b782abc6f04e528bacbb408a5c976426c4716d29
 =======
 git reset --soft HEAD~1
 >>>>>>> b782abc6f04e528bacbb408a5c976426c4716d29
