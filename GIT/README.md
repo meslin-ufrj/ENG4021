@@ -218,9 +218,11 @@ git push origin main
 
 # Problemas conhecidos e suas "soluções"
 
-- [Desistir de um commit porque não consegue fazer push]()
-- [Origem e local divergem](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#origem-e-local-divergem)
-- [O mesmo arquivo editado na origem e no clone](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#o-mesmo-arquivo-editado-na-origem-e-no-clone)
+- [Desistir de um commit porque não consegue fazer push](#desistir-de-um-commit-porque-n%C3%A3o-consegue-fazer-push)
+- [Origem e local divergem](#origem-e-local-divergem)
+- [O mesmo arquivo editado na origem e no clone](#o-mesmo-arquivo-editado-na-origem-e-no-clone)
+
+- [Alterações locais não commitadas]()
 
 ## Desistir de um commit porque não consegue fazer push
 
@@ -414,6 +416,34 @@ Vá para o terminal do Codespace.
     ```
 
 1. Faça novamente o procedimento para realizar o PR na interface Web do Github.
+
+---
+
+## Alterações locais não comitadas
+
+### Sintoma
+
+```
+> git pull --tags origin main
+From https://github.com/AlexandreMeslin/ENG4021
+ * branch            main       -> FETCH_HEAD
+error: Your local changes to the following files would be overwritten by merge:
+	CRUD-1/README.md
+	GIT/README.md
+	MeuSite/entrada/admin.py
+	MeuSite/entrada/models.py
+	MeuSite/nomeRelativoAoMeuTema/models.py
+Please commit your changes or stash them before you merge.
+Aborting
+```
+
+### Solução
+
+```bash
+git add .
+git commit -m "Lorem ipsum dolor sit amet"
+git pull --tags origin main
+```
 
 ---
 
