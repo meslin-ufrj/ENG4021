@@ -218,8 +218,43 @@ git push origin main
 
 # Problemas conhecidos e suas "soluções"
 
+- [Desistir de um commit porque não consegue fazer push]()
 - [Origem e local divergem](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#origem-e-local-divergem)
 - [O mesmo arquivo editado na origem e no clone](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#o-mesmo-arquivo-editado-na-origem-e-no-clone)
+
+## Desistir de um commit porque não consegue fazer push
+
+### Sintoma
+
+```
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <files>
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+```
+
+### Solução
+
+**Tentativa 1**: Desfazer o commit, mas manter as alterações no diretório de trabalho:
+
+```bash
+git reset --soft HEAD~1
+```
+> Not que HEAD~1 usa o sinal de til e não um traço!
+
+Se não funcionar...
+
+**Tentativa 2**: Desfazer o commit e deixar as mudanças como “unstaged”:
+
+```bash
+git reset --soft HEAD~1
+```
+
+Tente sincronizar agora com a origem (se quiser, pode usar agora a interface gráfica).
+
+(Matheus, obrigado!)
+
+---
 
 ## Origem e local divergem
 
