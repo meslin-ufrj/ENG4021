@@ -393,7 +393,6 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 
 1. No arquivo `MeuSite/MeuSite/admin.py` registre o banco de dados para ser administrado via interface administrativa:
     ```python
-
     from django.contrib import admin
     # Register your models here.
     # Lembre-se que `Pessoa` é o nome da classe que você criou
@@ -408,22 +407,28 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 > tempo estimado: menos de 2h-estudante
 
 Crie na sua aplicação tema:
+
 - Um view para renderizar uma página de consulta que liste todo o seu banco de dados
 - Um template html para exibir todo o seu banco de dados
 - Uma rota para esse view
+
 Veja um exemplo de um view que busca todos os contatos em um banco de dados e renderiza um template para exibir os dados em um navegador. Adapte-o para o seu caso:
+
 - View criado dentro da pasta da sua aplicação-tema (não é a aplicação principal). Lembre-se de proteger esse view, mas somente depois que ele funcionar. No meu exemplo, Pessoas é o nome da tabela do banco de dados que contém as informações dos contatos - veja o import do models.
+
 ```python
 from django.shortcuts import render
-from contatos.models import Pessoa
+from MeuSite.models import Pessoa
 from django.views.generic.base import View
+
 class ContatoListView(View):
- def get(self, request, *args, **kwargs):
-  pessoas = Pessoa.objects.all()
-  contexto = { 'pessoas': pessoas, }
-  return render(request, 'contatos/listaContatos.html', contexto)
+  def get(self, request, *args, **kwargs):
+    pessoas = Pessoa.objects.all()
+    contexto = { 'pessoas': pessoas, }
+    return render(request, 'contatos/listaContatos.html', contexto)
 ```
 - Template criado dentro da pasta da sua aplicação, dentro da pasta templates.
+
 ```html
 {% load static %}
 <!DOCTYPE html>
@@ -440,7 +445,7 @@ class ContatoListView(View):
     {% for pessoa in pessoas %}
       <tr>
         <td>{{ pessoa.nome }}</td>
-        <td>{{pessoa.idade }}</td>
+        <td>{{ pessoa.idade }}</td>
         <td>{{ pessoa.salario }}</td>
       </tr>
     {% empty %}
@@ -458,17 +463,17 @@ class ContatoListView(View):
 ## Consulta com filtro
 > tempo estimado: menos de 3h-estudante por conjunto de páginas
 
-Implemente várias consultas no seu site. Nós ainda não sabemos criar atualizações, mas podemos fazê-las através da interface administrativa (usando /admin na url do site).
+Implemente várias consultas no seu site. Nós ainda não sabemos criar atualizações, mas podemos fazê-las através da interface administrativa (usando `/admin` na url do site).
 
 No exemplo anterior, nós usamos:
-```
+```python
 pessoas = Pessoa.objects.all()
 ```
 Para trazer todas as pessoas do banco de dados. Podemos modificar essa declaração para buscar somente o que queremos usando o método filter:
 ```python
 objects.all().filter(campo1='condição1', campo2='condição2',)
 ```
-Por exemplo, para buscar um nome que seja exatamente ‘Ana’:
+Por exemplo, para buscar um nome que seja exatamente `Ana`:
 ```python
 objects.all().filter(nome='Ana')
 ```
@@ -516,7 +521,7 @@ def respostaBuscaUmContato(request):
   contexto = { 'pessoas': pessoas, }
   return render(request, 'contatos/listaContatos.html', contexto)
 ```
-Template buscaUmContato.html
+Template `buscaUmContato.html`:
 ```html
 {% load static %}
 <!DOCTYPE html>
@@ -535,7 +540,7 @@ Template buscaUmContato.html
 </body>
 </html>
 ```
-Template listaContatos.html
+Template `listaContatos.html`:
 ```html
 {% load static %}
 <!DOCTYPE html>
