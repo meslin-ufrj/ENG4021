@@ -249,15 +249,7 @@ Se não funcionar...
 **Tentativa 2**: Desfazer o commit e deixar as mudanças como “unstaged”:
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 git reset --mixed HEAD~1
-=======
-git reset --soft HEAD~1
->>>>>>> b782abc6f04e528bacbb408a5c976426c4716d29
-=======
-git reset --soft HEAD~1
->>>>>>> b782abc6f04e528bacbb408a5c976426c4716d29
 ```
 
 Tente sincronizar agora com a origem (se quiser, pode usar agora a interface gráfica).
@@ -419,30 +411,32 @@ Vá para o terminal do Codespace.
 
 ---
 
-## Alterações locais não commitadas
+## O push vai tornar público um e-mail privado
 
-### Sintoma
+### Sintoma:
 
 ```
-> git pull --tags origin main
-From https://github.com/AlexandreMeslin/ENG4021
- * branch            main       -> FETCH_HEAD
-error: Your local changes to the following files would be overwritten by merge:
-	CRUD-1/README.md
-	GIT/README.md
-	MeuSite/entrada/admin.py
-	MeuSite/entrada/models.py
-	MeuSite/nomeRelativoAoMeuTema/models.py
-Please commit your changes or stash them before you merge.
-Aborting
+> git push -u origin codespace-fantastic-space-zebra-vp7p7jpxw69hp9v4
+remote: error: GH007: Your push would publish a private email address.        
+remote: You can make your email public or disable this protection by visiting:        
+remote: https://github.com/settings/emails        
+To https://github.com/AlexandreMeslin/ENG4021
+ ! [remote rejected] codespace-fantastic-space-zebra-vp7p7jpxw69hp9v4 -> codespace-fantastic-space-zebra-vp7p7jpxw69hp9v4 (push declined due to email privacy restrictions)
+error: failed to push some refs to 'https://github.com/AlexandreMeslin/ENG4021'
 ```
 
 ### Solução
 
+Usar o e‑mail *no‑reply* do GitHub:
+
 ```bash
-git add .
-git commit -m "Lorem ipsum dolor sit amet"
-git pull --tags origin main
+git config user.email "SEU_ID+SEU_USERNAME@users.noreply.github.com"
+```
+
+Você consegue obter o seu ID com o seguinte comando:
+
+```bash
+curl -s https://api.github.com/users/SEU_USERNAME | grep '"id"'
 ```
 
 ---

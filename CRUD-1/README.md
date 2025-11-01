@@ -1,9 +1,11 @@
 # Roteiro CRUD-1
 
+
 ## Observações importantes
 
 - Os nomes `MeuSite`, `contatos, `nomeRelativoAoMeuTema` e Tema` são reservados para os exemplos. Vocês não devem usá-los. Use nomes relativos ao seu tema de trabalho.
 - O tempo de cada atividade pode ser dividido entre vários membros do grupo, ou seja, uma atividade que valeria 600 XPs, se dividida por 2 componentes, valerá 300 XPs para cada um. Também pode ser dividida por 3, onde 1 componente ficará com 300 XPs e os outros 2 com 150 XPs, cada.
+
 
 ## Tarefas
 
@@ -17,6 +19,10 @@
 ## Site baseado em Django
 > Tempo estimado: menos de 1h-estudante
 
+Nessa tarefa, você deverá criar um site utilizando o *framework* **Django**.
+Ao terminar de criar o site, você deve informar aos outros compontentes do grupo para que eles possam realizar um *Pull* no repositório, caso eles já tenham clonado (realizado o *fork*) do repositório original.
+Se você implementar essa tarefa no repositório clonado, você deveria fazer um *Pull Request* e aguardar que o dono do repositório faça o *Merge* (avise a ele para fazer o merge) e informar aos outros componentes do grupo para fazerem o *Pull*.
+
 1. No repositório do seu projeto (pode ser no clone ou no original), abra o Codespace (crie, apenas se não existir algum Codespace).
 
 1. No terminal, crie um `Virtual Environment` com o comando:
@@ -29,6 +35,7 @@
     ```bash
     source venv/bin/activate
     ```
+    > Verifique se o prompt apresenta `(venv)` no inicio.
 
 1. Usando a interface grárica do Codespace, crie o arquivo `requirements.txt` na raiz do seu repositório. Coloque todas as dependências de módulos nesse arquivo.
     > Provavelmente, você terá que incluir no arquivo somente o modulo `django`, como você já fez anteriormente.
@@ -54,6 +61,8 @@
 ## Arquivo README.md
 > tempo estimado: menos de 3h-estudante
 
+Nessa tarefa, você irá terminar o conteúdo do arquivo `README.md`.
+
 Termine o arquivo README. Inclua, pelo menos, as seguintes informações:
 - Componentes do grupo
 - Descrição do tema
@@ -64,6 +73,8 @@ Veja mais em:
 
 ## Autenticação de usuário
 > tempo estimado: menos de 3h-estudante
+
+Nessa tarefa você irá implementar a autenticação do usuário.
 
 Para saber mais sobre autenticação, visite:
 - [https://docs.djangoproject.com/en/5.2/topics/auth/default/](https://docs.djangoproject.com/en/5.2/topics/auth/default/)
@@ -110,7 +121,11 @@ Se você ainda não criou o superusuário da sua aplicação, faça-o agora com 
 python manage.py createsuperuser
 ```
 
-Use a interface administrativa para criar novos usuário para você testar o seu site. Com o seu site no ar, através do navegador, acesse a URL do seu site seguida por /admin. Veja o exemplo a seguir. Verifique na aba `Ports` o link para o seu site. Por exemplo:
+Use a interface administrativa para criar novos usuários para você testar o seu site.
+Com o seu site no ar, através do navegador, acesse a URL do seu site seguida por /admin. 
+Veja o exemplo a seguir. 
+Verifique na aba `Ports` o link para o seu site. 
+Por exemplo:
 ```
 https://effective-space-q57x4g4c499-8000.app.github.dev/
 ```
