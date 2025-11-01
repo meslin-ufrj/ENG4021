@@ -40,7 +40,7 @@ Esse diretório será utilizado para criar a calculadora.
 - Aluno 5:
     - Criar o modulo `divide.py` dentro do diretório `Calculadora`.
     - Criar a função `dividef` que recebe dois números reais e retorna a sua divisão.
-- Implementar testes no módulo. Você pode usar o segmento de código a seguir para realizar o teste. Esse código exemplica como realizar o teste para a função `somaf`. Modifique-o para a sua função.
+- Implementar testes no módulo. Você pode usar o segmento de código a seguir para realizar o teste. Esse código exemplifica como realizar o teste para a função `somaf`. Modifique-o para a sua função.
     ```python
     def somaf(n1, n2):
         return n1 + n2
