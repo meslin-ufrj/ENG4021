@@ -1,23 +1,22 @@
 # Roteiro CRUD-1
 
-
 ## Observações importantes
 
-- Os nomes `MeuSite`, `contatos, `nomeRelativoAoMeuTema` e Tema` são reservados para os exemplos. Vocês não devem usá-los. Use nomes relativos ao seu tema de trabalho.
+- Os nomes `MeuSite`, `contatos`, `nomeRelativoAoMeuTema` e `Tema` são reservados para os exemplos. Vocês não devem usá-los. Use nomes relativos ao seu tema de trabalho.
 - O tempo de cada atividade pode ser dividido entre vários membros do grupo, ou seja, uma atividade que valeria 600 XPs, se dividida por 2 componentes, valerá 300 XPs para cada um. Também pode ser dividida por 3, onde 1 componente ficará com 300 XPs e os outros 2 com 150 XPs, cada.
 
 
 ## Tarefas
 
-- [Criar site baseado em Django](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#site-baseado-em-django)
-- [Atualizar o arquivo README.md](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#arquivo-readmemd)
-- [Implementar autenticação de usuário](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#autentica%C3%A7%C3%A3o-de-usu%C3%A1rio)
-- [Alimentar base de dados](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#base-de-dados)
-- [Implementar consulta](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#p%C3%A1gina-de-consulta)
-- [Implementar filtro na consulta](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#consulta-com-filtro)
+- [Criar site baseado em Django](#site-baseado-em-django)
+- [Atualizar o arquivo README.md](#arquivo-readmemd)
+- [Implementar autenticação de usuário](#autentica%C3%A7%C3%A3o-de-usu%C3%A1rio)
+- [Alimentar base de dados](#base-de-dados)
+- [Implementar consulta](#p%C3%A1gina-de-consulta)
+- [Implementar filtro na consulta](#consulta-com-filtro)
 
 ## Site baseado em Django
-> Tempo estimado: menos de 1h-estudante
+> Tempo estimado: menos de 1h-estudante - tarefa fácil
 
 Nessa tarefa, você deverá criar um site utilizando o *framework* **Django**.
 Ao terminar de criar o site, você deve informar aos outros compontentes do grupo para que eles possam realizar um *Pull* no repositório, caso eles já tenham clonado (realizado o *fork*) do repositório original.
@@ -32,22 +31,28 @@ Se você implementar essa tarefa no repositório clonado, você deveria fazer um
     > Você somente terá que fazer essa operação uma vez, mas certifique-se que o diretório `venv` está presente.
 
 1.  Ative o `venv`:
+
     ```bash
     source venv/bin/activate
     ```
+
     > Verifique se o prompt apresenta `(venv)` no inicio.
 
 1. Usando a interface grárica do Codespace, crie o arquivo `requirements.txt` na raiz do seu repositório. Coloque todas as dependências de módulos nesse arquivo.
+
     > Provavelmente, você terá que incluir no arquivo somente o modulo `django`, como você já fez anteriormente.
 
 1. Instale as dependências:
+
     ```bash
     pip install -r requirements.txt
     ```
+
     > - Verifique se as dependências foram instaladas com sucesso
     > - Você somente terá que fazer essa operação uma vez, mas se você estiver na dúvida, pode realizar novamente porque o `pip` somente irá instalar os módulos que ainda não tiverem sido instalados.
 
 1. Crie o seu site (substitura `MeuSite` pelo nome do seu projeto):
+
     ```bash
     django-admin startproject MeuSite
     ```
@@ -59,7 +64,7 @@ Se você implementar essa tarefa no repositório clonado, você deveria fazer um
 
 
 ## Arquivo README.md
-> tempo estimado: menos de 3h-estudante
+> tempo estimado: menos de 3h-estudante - tarefa difícil
 
 Nessa tarefa, você irá terminar o conteúdo do arquivo `README.md`.
 
@@ -69,14 +74,19 @@ Termine o arquivo README. Inclua, pelo menos, as seguintes informações:
 - Como usar o site (com imagens)
 
 Veja mais em:
+
 - [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
+
+
 ## Autenticação de usuário
-> tempo estimado: menos de 3h-estudante
+> tempo estimado: menos de 3h-estudante - tarefa difícil
+
+> o tempo dessa tarefa não inclui criar as páginas HTML e as folhas de estilo CSS
 
 Nessa tarefa você irá implementar a autenticação do usuário.
-
 Para saber mais sobre autenticação, visite:
+
 - [https://docs.djangoproject.com/en/5.2/topics/auth/default/](https://docs.djangoproject.com/en/5.2/topics/auth/default/)
 - [https://docs.djangoproject.com/en/5.2/ref/contrib/auth/](https://docs.djangoproject.com/en/5.2/ref/contrib/auth/)
 
@@ -117,6 +127,7 @@ Além das propriedades listadas acima, os seguintes métodos também fazem parte
 | email_user(subject, message, from_email=None, **kwargs) | envia um e-mail para o usuário |
 
 Se você ainda não criou o superusuário da sua aplicação, faça-o agora com o comando no terminal:
+
 ```bash
 python manage.py createsuperuser
 ```
@@ -126,9 +137,11 @@ Com o seu site no ar, através do navegador, acesse a URL do seu site seguida po
 Veja o exemplo a seguir. 
 Verifique na aba `Ports` o link para o seu site. 
 Por exemplo:
+
 ```
 https://effective-space-q57x4g4c499-8000.app.github.dev/
 ```
+
 Copie o link e cole em um navegador. Acrescente `admin/` no final do link e entre na aplicação de administração usando as credenciais do superusuário que você criou anteriormente.
 ```
 https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
@@ -166,12 +179,14 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     ```
 
 1. Informe a rota que deve ser seguida após o login criando a seguinte variável no arquivo `settings.py`. Note a `/` antes e depois da rota. Substitua meuTema pela rota adequada. Informe também a página seguinte ao logout.
+
     ```python
     LOGIN_REDIRECT_URL = '/meuTema/home/'
     LOGOUT_REDIRECT_URL = '/accounts/login/'
     ```
 
 1. Inclua as rotas de `django.contrib.auth.urls` no seu arquivo `urls.py` principal, localizado na pasta `MeuSite/MeuSite` (troque `MeuSite` pelo nome do seu projeto). Veja a figura a seguir - o seu arquivo deve estar parecido com esse:
+
     ```python
     """
     URL configuration for MeuSite project.
@@ -207,6 +222,7 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     ```
 
     Ao incluir essa path, as seguintes rotas são automaticamente incluídas no seu site (acrescente a URL do seu projeto à rota):
+
     - accounts/login/
       - Nome 'login'
       - Necessita da página registration/login.html
@@ -257,20 +273,26 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     ```
 
 1. Crie links no seu site para o usuário poder fazer login e logout!
+
     - Exemplo de link para login:
+
     ```python
     <a href="{% url 'login' %}">Link</a>
     ```
+
     - Exemplo de link para logout:
+
     ```python
     <form action="{% url 'logout' %}" method="post">
       {% csrf_token %}
       <button type="submit">Logout</button>
     </form>
     ```
+
     >  logout tem que usar método POST, por isso o uso do formulário com a tag `<form>`.
 
 1. Opcionalmente proteja as páginas que somente podem ser acessadas após o login usando o decorador `@login_required` nas funções dos `views` como mostrado no exemplo a seguir:
+
     ```python
     from django.shortcuts import render
     from django.contrib.auth.decorators import login_required
@@ -281,8 +303,10 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     ```
 
     Se for para proteger um view que está definido em uma classe, extenda a classe para ser derivada também de LoginRequiredMixin como mostra o exemplo a seguir:
+
     ```python
     from django.contrib.auth.mixins import LoginRequiredMixin
+    
     class ClasseProtegida(LoginRequiredMixin, View):
       def get(self, request, *args, **kwargs):
         # pode haver mais código aqui!
@@ -294,7 +318,7 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     ```
 
 ## Base de Dados
-> tempo estimado: menos de 3h-estudante
+> tempo estimado: menos de 3h-estudante - tarefa difícil
 
 > Para você implementar essa tarefa, o site básico em Django já deve ter sido criado.
 
@@ -342,6 +366,7 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     ```
 
 1. Se você precisar criar outros tipos de campos ou com outros atributos, veja uma lista não exaustiva a seguir:
+
     ```python
     AutoField
     BigAutoField
@@ -376,11 +401,14 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 1. Use a interface administrativa para criar as informações do seu banco de dados.
 
 1. Não se esqueça de migrar o banco de dados se houver alguma modificação em algum dos modelos ou se o Django avisar que deve realizar uma migração.
+
     ```bash
     python manage.py makemigrations
     python manage.py migrate
     ```
+
     Saída esperada (semelhante a essa):
+
     ```
     Operations to perform:
       Apply all migrations: admin, auth, contatos, contenttypes, sessions
@@ -407,6 +435,7 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     ```
 
 1. No arquivo `MeuSite/MeuSite/admin.py` registre o banco de dados para ser administrado via interface administrativa:
+
     ```python
     from django.contrib import admin
     # Register your models here.
@@ -416,18 +445,21 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     admin.site.register(Pessoa)
     ```
 
-1. Visite o seu site e inclua no final da URL o diretório `admim`. Supondo que o endereço do site é `https://fantastic-space-zebra-vp7p7jpxw69hp9v4-8000.app.github.dev/`, use o endereço `https://fantastic-space-zebra-vp7p7jpxw69hp9v4-8000.app.github.dev/admin/`.
+1. Visite o seu site e incluindo no final da URL o diretório `admim`. Supondo que o endereço do site seja `https://fantastic-space-zebra-vp7p7jpxw69hp9v4-8000.app.github.dev/`, use o endereço `https://fantastic-space-zebra-vp7p7jpxw69hp9v4-8000.app.github.dev/admin/`.
+
 
 ## Página de consulta
-> tempo estimado: menos de 2h-estudante
+
+> tempo estimado: menos de 2h-estudante - tarefa média
 
 Crie na sua aplicação tema:
 
 - Um view para renderizar uma página de consulta que liste todo o seu banco de dados
-- Um template html para exibir todo o seu banco de dados
+- Um template HTML para exibir todo o seu banco de dados
 - Uma rota para esse view
 
-Veja um exemplo de um view que busca todos os contatos em um banco de dados e renderiza um template para exibir os dados em um navegador. Adapte-o para o seu caso:
+Veja um exemplo de um view que busca todos os contatos em um banco de dados e renderiza um template para exibir os dados em um navegador. 
+Adapte-o para o seu caso:
 
 - View criado dentro da pasta da sua aplicação-tema (não é a aplicação principal). Lembre-se de proteger esse view, mas somente depois que ele funcionar. No meu exemplo, Pessoas é o nome da tabela do banco de dados que contém as informações dos contatos - veja o import do models.
 
@@ -442,7 +474,8 @@ class ContatoListView(View):
     contexto = { 'pessoas': pessoas, }
     return render(request, 'contatos/listaContatos.html', contexto)
 ```
-- Template criado dentro da pasta da sua aplicação, dentro da pasta templates.
+
+- Template criado dentro da pasta da sua aplicação, dentro da pasta `templates`.
 
 ```html
 {% load static %}
@@ -476,27 +509,35 @@ class ContatoListView(View):
 ```
 
 ## Consulta com filtro
-> tempo estimado: menos de 3h-estudante por conjunto de páginas
 
-Implemente várias consultas no seu site. Nós ainda não sabemos criar atualizações, mas podemos fazê-las através da interface administrativa (usando `/admin` na url do site).
+> tempo estimado: menos de 3h-estudante por conjunto de páginas - tarefa difícil
+
+Implemente várias consultas no seu site. Nós ainda não sabemos criar atualizações, mas podemos fazê-las através da interface administrativa (usando `/admin/` na url do site).
 
 No exemplo anterior, nós usamos:
+
 ```python
 pessoas = Pessoa.objects.all()
 ```
+
 Para trazer todas as pessoas do banco de dados. Podemos modificar essa declaração para buscar somente o que queremos usando o método filter:
+
 ```python
 objects.all().filter(campo1='condição1', campo2='condição2',)
 ```
+
 Por exemplo, para buscar um nome que seja exatamente `Ana`:
+
 ```python
 objects.all().filter(nome='Ana')
 ```
+
 Para buscar um nome que contenha `ana` (note o duplo sublinhado abaixo):
-`objects.all().filter(nome__icontains='ana')`
+`objects.all().filter(nome__icontains='ana')`.
 Exiba o resultado da mesma forma que foi implementado no item anterior.
 
 Para cada conjunto, você deve criar:
+
 - Um template para permitir ao usuário informar a busca desejada (texto da busca).
 - Um view para renderizar a página descrita acima. Esse view provavelmente deverá ser protegido (mas faça isso somente se for necessário e somente depois que ele estiver funcionando).
 - Uma rota para esse view.
@@ -511,12 +552,14 @@ Em resumo, cada consulta vai demandar:
 - 2 rotas
 
 Exemplo para buscar uma pessoa na lista de contatos:
+
 - URLs (2 urls)
+
 ```python
 from django.urls.conf import path
 from contatos import views
 
-app_name = 'contatos'
+app_name = 'contatos' # você deve colocar aqui o nome do seu app
 
 urlpatterns = [
   # pode ter mais rotas aqui nessa lista
@@ -526,17 +569,19 @@ urlpatterns = [
 ```
 
 Views (2 views)
+
 ```python
 def buscaUmContato(request):
   return render(request, 'contatos/buscaUmContato.html')
 
 def respostaBuscaUmContato(request):
-  pessoas = Pessoa.objects.all().filter(
-    nome__icontains=request.GET.get('nome'))
+  pessoas = Pessoa.objects.all().filter(nome__icontains=request.GET.get('nome'))
   contexto = { 'pessoas': pessoas, }
   return render(request, 'contatos/listaContatos.html', contexto)
 ```
+
 Template `buscaUmContato.html`:
+
 ```html
 {% load static %}
 <!DOCTYPE html>
@@ -555,7 +600,9 @@ Template `buscaUmContato.html`:
 </body>
 </html>
 ```
+
 Template `listaContatos.html`:
+
 ```html
 {% load static %}
 <!DOCTYPE html>

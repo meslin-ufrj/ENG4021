@@ -1,9 +1,9 @@
 # Índice
 
-- [Links úteis](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#links-%C3%BAteis)
-- [Uso do Github](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#uso-do-github)
-- [Problemas conhecidos e suas "soluções"](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#problemas-conhecidos-e-suas-solu%C3%A7%C3%B5es)
-- [Comandos utilizados](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT#comandos-utilizados)
+- [Links úteis](#links-%C3%BAteis)
+- [Uso do Github](#uso-do-github)
+- [Problemas conhecidos e suas "soluções"](#problemas-conhecidos-e-suas-solu%C3%A7%C3%B5es)
+- [Comandos utilizados](#comandos-utilizados)
 
 ---
 
@@ -42,6 +42,7 @@ E clica em **Fork** (no canto superior direito da tela).
 Depois clique em **Create fork**.
 
 O GitHub criará uma cópia pessoal do repositório, por exemplo (aluno2, aluno3, ... não existem, vai aparecer a sua conta no Github):
+
 - `https://github.com/aluno2/ENG4021`
 - `https://github.com/aluno3/ENG4021`
 
@@ -58,9 +59,11 @@ O GitHub criará uma cópia pessoal do repositório, por exemplo (aluno2, aluno3
     ![Abrir Codespace](./img/GIT-TelaAbrirCodespace.png)
 
 1. Aguarde o ambiente ser criado.  
+
    > O Codespace é como um **VS-Code** rodando no navegador.
 
    > Nesse momento, você tem uma cópia do *fork* que você fez do repositório original, ou seja, uma cópia da cópia.
+
 
 ## Fazer modificações
 
@@ -112,6 +115,7 @@ git push origin main
 
 Agora suas alterações estão no seu fork (aluno2/ENG4021).
 
+
 ## Criar um Pull Request (PR)
 
 No GitHub (aluno2/ENG4021):
@@ -135,6 +139,7 @@ No GitHub (aluno2/ENG4021):
 
     ![Abrir um PR](./img/GIT-TelaCriarPR3.png)
 
+
 ## Revisão pelo dono do repositório
 
 O aluno1 verá o PR em:
@@ -148,6 +153,7 @@ O **PR** também pode ser visto pela interface Web observando o link `Pull reque
 ![Aceitar PR](./img/GIT-TelaAceitarPR.png)
 
 Ele pode:
+
 - Analisar o código modificado.
 - Comentar ou solicitar alterações.
 - Fazer o merge quando estiver tudo certo.
@@ -221,8 +227,8 @@ git push origin main
 - [Desistir de um commit porque não consegue fazer push](#desistir-de-um-commit-porque-n%C3%A3o-consegue-fazer-push)
 - [Origem e local divergem](#origem-e-local-divergem)
 - [O mesmo arquivo editado na origem e no clone](#o-mesmo-arquivo-editado-na-origem-e-no-clone)
-
 - [Alterações locais não commitadas](#altera%C3%A7%C3%B5es-locais-n%C3%A3o-commitadas)
+
 
 ## Desistir de um commit porque não consegue fazer push
 
@@ -427,7 +433,7 @@ error: failed to push some refs to 'https://github.com/AlexandreMeslin/ENG4021'
 
 ### Solução
 
-Usar o e‑mail *no‑reply* do GitHub:
+Usar o e‑mail *no‑reply* do GitHub (lembre-se de substituir `SEU_ID` e `SEU_USERNAME` pelo seu ID e seu username corretos, respectivamente):
 
 ```bash
 git config user.email "SEU_ID+SEU_USERNAME@users.noreply.github.com"
@@ -438,6 +444,56 @@ Você consegue obter o seu ID com o seguinte comando:
 ```bash
 curl -s https://api.github.com/users/SEU_USERNAME | grep '"id"'
 ```
+
+---
+
+## O *branch* do PR tem conflitos com o conteúdo do repositório origem
+
+### Sintoma:
+
+Ao tentar fazer o *merge* você se depara com a seguinte mensagem de erro: 
+**This branch has conflicts that must be resolved**.
+
+### Solução:
+
+- Você recebeu um **Pull Request** (PR):
+
+![Pull request](img/GIT-merge1.png)
+
+- Você está pronto para aceitar o *merge*:
+
+![Lista de PR](img/GIT-merge2.png)
+
+- Mas você se depara com a seguinte mensagem de erro:
+
+![Mensagem de erro](img/GIT-merge3.png)
+
+- Clique em `Resolve conflicts`:
+- Resolva os conflitos clicando em 
+    - `Accept current change`
+    - `Accept incoming change`
+    - `Accept both changes`
+
+![Solução de conflitos](img/GIT-merge4.png)
+
+> Opcionalmente você pode apenas resolver o conflito removendo as linhas com `<<<`, `===` e `>>>` e editando o conflito.
+
+- Use `Prev` e `Next` para navegar entre os conflitos.
+- Quanto todos os conflitos estiverem resolvidos, clique no botão `Mark as resolved`:
+
+![Resolvido](img/GIT-merge5.png)
+
+- Resolva todos os conflitos e todos os arquivos. Ao terminar, clique em `Commit merge`:
+
+![Commit](img/GIT-merge6.png)
+
+- Agora você está pronto para realizar o *merge* do *pull request* . Clique no botão `Merge pull request* :
+
+![Merge](img/GIT-merge7.png)
+
+- Confirme o *merge* clicando no botão `Confirm merge`:
+
+![Confirma o merge](img/GIT-merge8.png)
 
 ---
 
