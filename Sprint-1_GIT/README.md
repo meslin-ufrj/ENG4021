@@ -13,7 +13,7 @@ Crie uma calculadora de quatro operações: `+`, `-`, `*` e `/`.
 - Criar o repositório do time (pode usar o mesmo repositório criado como tarefa da `Sprint 1`).
 - Criar um diretório chamado `Calculadora` na raiz do repositório.
 Esse diretório será utilizado para criar a calculadora.
-- Implementar o módulo `calculadora.py` que irá importar os seguintes módulos que está sendo desevolvido pelos alunos 1, 2, 3, 4 e 5:
+- Implementar o módulo `calculadora.py` que irá importar os seguintes módulos que estão sendo desevolvidos pelos alunos 1, 2, 3, 4 e 5:
     - `soma.py`
     - `subtrai.py`
     - `multiplica.py`
@@ -62,5 +62,7 @@ Esse diretório será utilizado para criar a calculadora.
 
 ## Todos os alunos
 
+- Testar o funcionamento da calculadora usando o Codespace
 - Criar um card no Kanban.
+- Incluir um *print* da calculadora funcionando.
 - Incluir um *print* do diretório `Calculadora` como evidência de que a tarefa foi concluída.
