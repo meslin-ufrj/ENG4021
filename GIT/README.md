@@ -374,6 +374,36 @@ Vá para o terminal do Codespace.
 
 ---
 
+## O push vai tornar público um e-mail privado
+
+### Sintoma:
+
+```
+> git push -u origin codespace-fantastic-space-zebra-vp7p7jpxw69hp9v4
+remote: error: GH007: Your push would publish a private email address.        
+remote: You can make your email public or disable this protection by visiting:        
+remote: https://github.com/settings/emails        
+To https://github.com/AlexandreMeslin/ENG4021
+ ! [remote rejected] codespace-fantastic-space-zebra-vp7p7jpxw69hp9v4 -> codespace-fantastic-space-zebra-vp7p7jpxw69hp9v4 (push declined due to email privacy restrictions)
+error: failed to push some refs to 'https://github.com/AlexandreMeslin/ENG4021'
+```
+
+### Solução
+
+Usar o e‑mail *no‑reply* do GitHub:
+
+```bash
+git config user.email "SEU_ID+SEU_USERNAME@users.noreply.github.com"
+```
+
+Você consegue obter o seu ID com o seguinte comando:
+
+```bash
+curl -s https://api.github.com/users/SEU_USERNAME | grep '"id"'
+```
+
+---
+
 # Comandos utilizados
 
 ```bash
