@@ -16,7 +16,6 @@
 - [Implementar consulta](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#p%C3%A1gina-de-consulta)
 - [Implementar filtro na consulta](https://github.com/AlexandreMeslin/ENG4021/tree/main/CRUD-1#consulta-com-filtro)
 
-
 ## Site baseado em Django
 > Tempo estimado: menos de 1h-estudante
 
@@ -137,11 +136,12 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 
 ![Aba Ports](img/Aba-Ports.png)
 
-1. Crie uma aplicação chamada `usuario` (sim, use esse nome):
+> Somente continue a partir desse ponto se o site (projeto) Django já foi criado e o repositório original já está atualizado (sincronizado).
+
+1. Crie uma aplicação chamada `usuario` (sim, você pode usar esse nome).
     ```bash
     python manage.py startapp usuario
     ```
-    Esse comando irá criar um diretório `usuario` dentro de `MeuSite`, no mesmo nível de `MeuSite/MeuSite`.
 
 1. Registre a aplicação `usuario` no arquivo `settings.py`:
 
@@ -155,12 +155,12 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
       "django.contrib.sessions",
       "django.contrib.messages",
       "django.contrib.staticfiles",
-      "usuario",
+      "usuario",     # <<= inclua essa linha
       "nomeRelativoAoMeuTema",
     ]
     ```
 
-    Configure as origens aceitáveis para o Django incluindo a seguinte lista no seu arquivo `settings.py`:
+1. Configure as origens aceitáveis para o Django incluindo a seguinte linha no seu arquivo `settings.py`:
     ```python
     CORS_ORIGIN_ALLOW_ALL = True
     ```
@@ -171,61 +171,106 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
     LOGOUT_REDIRECT_URL = '/accounts/login/'
     ```
 
-1. Inclua as rotas de `django.contrib.auth.urls` no seu arquivo `urls.py` principal, localizado na pasta MeuSite/MeuSite (troque MeuSite pelo nome do seu projeto). Veja a seguir:
-    ```bash
-    path('accounts/', include('django.contrib.auth.urls')),
+1. Inclua as rotas de `django.contrib.auth.urls` no seu arquivo `urls.py` principal, localizado na pasta `MeuSite/MeuSite` (troque `MeuSite` pelo nome do seu projeto). Veja a figura a seguir - o seu arquivo deve estar parecido com esse:
+    ```python
+    """
+    URL configuration for MeuSite project.
+
+    The `urlpatterns` list routes URLs to views. For more information please see:
+        https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    Examples:
+    Function views
+        1. Add an import:  from my_app import views
+        2. Add a URL to urlpatterns:  path('', views.home, name='home')
+    Class-based views
+        1. Add an import:  from other_app.views import Home
+        2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+    Including another URLconf
+        1. Import the include() function: from django.urls import include, path
+        2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    """
+
+    from django.contrib import admin
+    from django.urls import path
+    from django.urls.conf import include
+
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path("meuTema/", include("nomeRelativoAoMeuTema.urls")),
+        path("usuario/", include("usuario.urls")),
+        # A linha abaixo deve ser incluída
+        # As outras linhas devem aparecer em outras etapas
+        # Não as inclua!
+        path('accounts/', include('django.contrib.auth.urls')),
+        path('nomeRelativoAoMeuTema/', include('nomeRelativoAoMeuTema.urls')),
+    ]
     ```
 
     Ao incluir essa path, as seguintes rotas são automaticamente incluídas no seu site (acrescente a URL do seu projeto à rota):
     - accounts/login/
-        - Nome 'login'
-        - Necessita da página registration/login.html
-        - Usa a variável settings.LOGIN_REDIRECT_URL
-        - Método GET
+      - Nome 'login'
+      - Necessita da página registration/login.html
+      - Usa a variável settings.LOGIN_REDIRECT_URL
+      - Método GET
     - accounts/logout/
-        - Nome 'logout'
-        - Usa a variável settings.LOGOUT_REDIRECT_URL
-        - Somente método POST
+      - Nome 'logout'
+      - Usa a variável settings.LOGOUT_REDIRECT_URL
+      - Somente método POST
     - accounts/password_change/
-        - Nome 'password_change'
-        - accounts/password_change/done/
-        - Nome 'password_change_done'
+      - Nome 'password_change'
+    - accounts/password_change/done/
+      - Nome 'password_change_done'
     - accounts/password_reset/
-        - Nome 'password_reset'
+      - Nome 'password_reset'
     - accounts/password_reset/done/
-        - Nome 'password_reset_done'
+      - Nome 'password_reset_done'
     - accounts/reset/<uidb64>/<token>/
-        - Nome 'password_reset_confirm'
+      - Nome 'password_reset_confirm'
     - accounts/reset/done/
-        - Nome 'password_reset_complete'
+      - Nome 'password_reset_complete'
 
-1. Em crie a pasta `templates/registration/` dentro da pasta usuario. Nessa pasta crie o arquivo `login.html`. Use esse exemplo para criar o arquivo. Ele deve conter, pelo menos, o formulário para o usuário entrar com as credenciais.
-  O código a seguir mostra um exemplo minimalista dessa página.
-  Use-o como referência para você implementar o que foi projetado:
-      ```python
-      {% load static %}
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-          <title>Login</title>
-      </head>
-      <body>
-          <h2>Login</h2>
-          <form method="post">
-              {% csrf_token %}
-              {{ form.as_p }}
-              <button type="submit">Login</button>
-          </form>
-      </body>
-      </html>
+1. Crie a pasta `templates/registration/` dentro da pasta usuario. 
+    Nessa pasta crie o arquivo `login.html`. 
+    Use esse exemplo para criar o arquivo. 
+    Ele deve conter, pelo menos, o formulário para o usuário entrar com as credenciais. Esse é um exemplo básico de formulário de autenticação. 
+    Ele deve ser modificado para ficar igual ao que foi projetado e desenhado no **Figma**.
+
+    ```html
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <title>Login</title>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+    </body>
+    </html>
     ```
 
 1. Crie links no seu site para o usuário poder fazer login e logout!
+    - Exemplo de link para login:
+    ```python
+    <a href="{% url 'login' %}">Link</a>
+    ```
+    - Exemplo de link para logout:
+    ```python
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+    </form>
+    ```
+    >  logout tem que usar método POST, por isso o uso do formulário com a tag `<form>`.
 
-1. Proteja as páginas que somente podem ser acessadas após o login usando o decorador `@login_required` nas funções dos `views` como mostrado no exemplo a seguir:
+1. Opcionalmente proteja as páginas que somente podem ser acessadas após o login usando o decorador `@login_required` nas funções dos `views` como mostrado no exemplo a seguir:
     ```python
     from django.shortcuts import render
     from django.contrib.auth.decorators import login_required
@@ -235,7 +280,7 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
       return render(request, 'seguranca/paginaSecreta.html')
     ```
 
-  Se for para proteger um view que está definido em uma classe, extenda a classe para ser derivada também de `LoginRequiredMixin` como mostra o exemplo a seguir:
+    Se for para proteger um view que está definido em uma classe, extenda a classe para ser derivada também de LoginRequiredMixin como mostra o exemplo a seguir:
     ```python
     from django.contrib.auth.mixins import LoginRequiredMixin
     class ClasseProtegida(LoginRequiredMixin, View):
@@ -261,116 +306,115 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 
 1. Vamos supor que você queira criar uma tabela no banco de dados para armazenar dados de um contato de uma agenda telefônica ou coisa parecida. Considerando que os atributos de uma pessoa são os seguinte:
 
-  | Atributo | Tipo do atributo | Tipo do atributo no banco de dados |
-  |---|---|---|
-  | id | chave primária (todas as tabelas que você criar devem ter) | AutoField |
-  | nome | String | CharField |
-  | idade | Inteiro | IntegerField |
-  | salario | Real | DecimalField |
-  | email | e-mail | EmailField |
-  | dtNasc | Data | DateField |
+    | Atributo | Tipo do atributo | Tipo do atributo no banco de dados |
+    |---|---|---|
+    | id | chave primária (todas as tabelas que você criar devem ter) | AutoField |
+    | nome | String | CharField |
+    | idade | Inteiro | IntegerField |
+    | salario | Real | DecimalField |
+    | email | e-mail | EmailField |
+    | dtNasc | Data | DateField |
 
 1. Baseado nos campos descritos acima, vamos criar uma classe no arquivo `models.py` para representar uma `Pessoa` (note a letra `P` maiúscula).
   Modifique o nome da classe para representar o objeto que você quer criar para o seu projeto.
   Toda classe que representa um modelo que vai ser persistido no banco de dados deve extender a classe `django.db.models.Model`. O arquivo `models.py` deve conter a seguinte classe:
 
-  ```python
-  from django.db import models
-  
-  class Pessoa(models.Model):
-    id = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length=100, help_text='Entre o nome')
-    idade = models.IntegerField(help_text='Entre a idade')
-    salario = models.DecimalField(help_text='Entre o salário' decimal_places=2, max_digits=8)
-    email = models.EmailField(help_text='Informe o email', max_length=254)
-    dtNasc = models.DateField(help_text='Nascimento no formato DD/MM/AAAA', verbose_name='Data de nascimento')
-      
-    def __str__(self):
-      '''
-      Como cada uma das entradas do banco de dados vai aparecer 
-      na interface administrativa.
-      Veja mais em `magic method`, `special method`, `dunder method`
-      dunder == double underscore ou double underline
-      @seealso: https://docs.python.org/3/reference/datamodel.html#specialnames
-      '''
-      return "Pessoa: " + self.nome 
-  ```
+    ```python
+    from django.db import models
+    
+    class Pessoa(models.Model):
+      id = models.AutoField(primary_key=True)
+      nome = models.CharField(max_length=100, help_text='Entre o nome')
+      idade = models.IntegerField(help_text='Entre a idade')
+      salario = models.DecimalField(help_text='Entre o salário', decimal_places=2, max_digits=8)
+      email = models.EmailField(help_text='Informe o email', max_length=254)
+      dtNasc = models.DateField(help_text='Nascimento no formato DD/MM/AAAA', verbose_name='Data de nascimento')
+        
+      def __str__(self):
+        '''
+        Como cada uma das entradas do banco de dados vai aparecer 
+        na interface administrativa.
+        Veja mais em `magic method`, `special method`, `dunder method`
+        dunder == double underscore ou double underline
+        @seealso: https://docs.python.org/3/reference/datamodel.html#specialnames
+        '''
+        return "Pessoa: " + self.nome 
+    ```
 
 1. Se você precisar criar outros tipos de campos ou com outros atributos, veja uma lista não exaustiva a seguir:
-  ```python
-  AutoField
-  BigAutoField
-  BigIntegerField
-  BinaryField
-  BooleanField
-  CharField
-  DateField
-  DateTimeField
-  DecimalField
-  DurationField
-  EmailField
-  FileField
-  FilePathField
-  FloatField
-  ImageField
-  IntegerField
-  GenericIPAddressField
-  NullBooleanField
-  PositiveIntegerField
-  PositiveSmallIntegerField
-  SlugField
-  SmallIntegerField
-  TextField
-  TimeField
-  URLField
-  UUIDField
-  ```
+    ```python
+    AutoField
+    BigAutoField
+    BigIntegerField
+    BinaryField
+    BooleanField
+    CharField
+    DateField
+    DateTimeField
+    DecimalField
+    DurationField
+    EmailField
+    FileField
+    FilePathField
+    FloatField
+    ImageField
+    IntegerField
+    GenericIPAddressField
+    NullBooleanField
+    PositiveIntegerField
+    PositiveSmallIntegerField
+    SlugField
+    SmallIntegerField
+    TextField
+    TimeField
+    URLField
+    UUIDField
+    ```
 
-  Você também pode consultar a [documentação oficial](https://docs.djangoproject.com/en/4.1/ref/models/fields/).
+    Você também pode consultar a [documentação oficial](https://docs.djangoproject.com/en/4.1/ref/models/fields/).
 
 1. Use a interface administrativa para criar as informações do seu banco de dados.
 
 1. Não se esqueça de migrar o banco de dados se houver alguma modificação em algum dos modelos ou se o Django avisar que deve realizar uma migração.
-  ```python
-  python manage.py makemigrations
-  python manage.py migrate
-  ```
-  Saída esperada (semelhante a essa):
-  ```
-  Operations to perform:
-    Apply all migrations: admin, auth, contatos, contenttypes, sessions
-  Running migrations:
-    Applying contenttypes.0001_initial... OK
-    Applying auth.0001_initial... OK
-    Applying admin.0001_initial... OK
-    Applying admin.0002_logentry_remove_auto_add... OK
-    Applying admin.0003_logentry_add_action_flag_choices... OK
-    Applying contenttypes.0002_remove_content_type_name... OK
-    Applying auth.0002_alter_permission_name_max_length... OK
-    Applying auth.0003_alter_user_email_max_length... OK
-    Applying auth.0004_alter_user_username_opts... OK
-    Applying auth.0005_alter_user_last_login_null... OK
-    Applying auth.0006_require_contenttypes_0002... OK
-    Applying auth.0007_alter_validators_add_error_messages... OK
-    Applying auth.0008_alter_user_username_max_length... OK
-    Applying auth.0009_alter_user_last_name_max_length... OK
-    Applying auth.0010_alter_group_name_max_length... OK
-    Applying auth.0011_update_proxy_permissions... OK
-    Applying auth.0012_alter_user_first_name_max_length... OK
-    Applying contatos.0001_initial... OK
-    Applying sessions.0001_initial... OK
-  ```
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+    Saída esperada (semelhante a essa):
+    ```
+    Operations to perform:
+      Apply all migrations: admin, auth, contatos, contenttypes, sessions
+    Running migrations:
+      Applying contenttypes.0001_initial... OK
+      Applying auth.0001_initial... OK
+      Applying admin.0001_initial... OK
+      Applying admin.0002_logentry_remove_auto_add... OK
+      Applying admin.0003_logentry_add_action_flag_choices... OK
+      Applying contenttypes.0002_remove_content_type_name... OK
+      Applying auth.0002_alter_permission_name_max_length... OK
+      Applying auth.0003_alter_user_email_max_length... OK
+      Applying auth.0004_alter_user_username_opts... OK
+      Applying auth.0005_alter_user_last_login_null... OK
+      Applying auth.0006_require_contenttypes_0002... OK
+      Applying auth.0007_alter_validators_add_error_messages... OK
+      Applying auth.0008_alter_user_username_max_length... OK
+      Applying auth.0009_alter_user_last_name_max_length... OK
+      Applying auth.0010_alter_group_name_max_length... OK
+      Applying auth.0011_update_proxy_permissions... OK
+      Applying auth.0012_alter_user_first_name_max_length... OK
+      Applying contatos.0001_initial... OK
+      Applying sessions.0001_initial... OK
+    ```
 
 1. No arquivo `MeuSite/MeuSite/admin.py` registre o banco de dados para ser administrado via interface administrativa:
-  ```python
-
-  from django.contrib import admin
-  # Register your models here.
-  # Lembre-se que `Pessoa` é o nome da classe que você criou
-  # Você deve substituir `Pessoa` pela classe criada referente ao seu projeto
-  from contatos.models import Pessoa
-  admin.site.register(Pessoa)
-  ```
+    ```python
+    from django.contrib import admin
+    # Register your models here.
+    # Lembre-se que `Pessoa` é o nome da classe que você criou
+    # Você deve substituir `Pessoa` pela classe criada referente ao seu projeto
+    from contatos.models import Pessoa
+    admin.site.register(Pessoa)
+    ```
 
 1. Visite o seu site e inclua no final da URL o diretório `admim`. Supondo que o endereço do site é `https://fantastic-space-zebra-vp7p7jpxw69hp9v4-8000.app.github.dev/`, use o endereço `https://fantastic-space-zebra-vp7p7jpxw69hp9v4-8000.app.github.dev/admin/`.
 
@@ -378,22 +422,28 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 > tempo estimado: menos de 2h-estudante
 
 Crie na sua aplicação tema:
+
 - Um view para renderizar uma página de consulta que liste todo o seu banco de dados
 - Um template html para exibir todo o seu banco de dados
 - Uma rota para esse view
+
 Veja um exemplo de um view que busca todos os contatos em um banco de dados e renderiza um template para exibir os dados em um navegador. Adapte-o para o seu caso:
+
 - View criado dentro da pasta da sua aplicação-tema (não é a aplicação principal). Lembre-se de proteger esse view, mas somente depois que ele funcionar. No meu exemplo, Pessoas é o nome da tabela do banco de dados que contém as informações dos contatos - veja o import do models.
+
 ```python
 from django.shortcuts import render
-from contatos.models import Pessoa
+from MeuSite.models import Pessoa
 from django.views.generic.base import View
+
 class ContatoListView(View):
- def get(self, request, *args, **kwargs):
-  pessoas = Pessoa.objects.all()
-  contexto = { 'pessoas': pessoas, }
-  return render(request, 'contatos/listaContatos.html', contexto)
+  def get(self, request, *args, **kwargs):
+    pessoas = Pessoa.objects.all()
+    contexto = { 'pessoas': pessoas, }
+    return render(request, 'contatos/listaContatos.html', contexto)
 ```
 - Template criado dentro da pasta da sua aplicação, dentro da pasta templates.
+
 ```html
 {% load static %}
 <!DOCTYPE html>
@@ -410,7 +460,7 @@ class ContatoListView(View):
     {% for pessoa in pessoas %}
       <tr>
         <td>{{ pessoa.nome }}</td>
-        <td>{{pessoa.idade }}</td>
+        <td>{{ pessoa.idade }}</td>
         <td>{{ pessoa.salario }}</td>
       </tr>
     {% empty %}
@@ -428,17 +478,17 @@ class ContatoListView(View):
 ## Consulta com filtro
 > tempo estimado: menos de 3h-estudante por conjunto de páginas
 
-Implemente várias consultas no seu site. Nós ainda não sabemos criar atualizações, mas podemos fazê-las através da interface administrativa (usando /admin na url do site).
+Implemente várias consultas no seu site. Nós ainda não sabemos criar atualizações, mas podemos fazê-las através da interface administrativa (usando `/admin` na url do site).
 
 No exemplo anterior, nós usamos:
-```
+```python
 pessoas = Pessoa.objects.all()
 ```
 Para trazer todas as pessoas do banco de dados. Podemos modificar essa declaração para buscar somente o que queremos usando o método filter:
 ```python
 objects.all().filter(campo1='condição1', campo2='condição2',)
 ```
-Por exemplo, para buscar um nome que seja exatamente ‘Ana’:
+Por exemplo, para buscar um nome que seja exatamente `Ana`:
 ```python
 objects.all().filter(nome='Ana')
 ```
@@ -486,7 +536,7 @@ def respostaBuscaUmContato(request):
   contexto = { 'pessoas': pessoas, }
   return render(request, 'contatos/listaContatos.html', contexto)
 ```
-Template buscaUmContato.html
+Template `buscaUmContato.html`:
 ```html
 {% load static %}
 <!DOCTYPE html>
@@ -505,7 +555,7 @@ Template buscaUmContato.html
 </body>
 </html>
 ```
-Template listaContatos.html
+Template `listaContatos.html`:
 ```html
 {% load static %}
 <!DOCTYPE html>

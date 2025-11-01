@@ -14,6 +14,10 @@ class MTCars(models.Model):
     vs = models.IntegerField(db_column='VS') # Field name made lowercase.
     am = models.IntegerField(db_column='AM') # Field name made lowercase.
     gear = models.IntegerField(db_column='GEAR') # Field name made lowercase.
+
+    class Meta:
+        verbose_name = 'MT Cars'
+        verbose_name_plural = 'MT Cars'
     
     def __str__(self):
         return f'Carro: {self.name}'
