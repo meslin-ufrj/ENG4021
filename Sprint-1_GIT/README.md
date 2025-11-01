@@ -1,4 +1,4 @@
-# Tarefa para aprender a suar o Github e o Codespace
+# Tarefa para aprender a usar o Github e o Codespace
 
 > Tarefa
 
