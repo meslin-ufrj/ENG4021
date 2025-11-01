@@ -228,6 +228,8 @@ git push origin main
 - [Origem e local divergem](#origem-e-local-divergem)
 - [O mesmo arquivo editado na origem e no clone](#o-mesmo-arquivo-editado-na-origem-e-no-clone)
 - [Alterações locais não commitadas](#altera%C3%A7%C3%B5es-locais-n%C3%A3o-commitadas)
+- [O push vai tornar público um e-mail privado](#o-push-vai-tornar-p%C3%BAblico-um-e-mail-privado)
+- [O branch do PR tem conflitos com o conteúdo do repositório origem](#o-branch-do-pr-tem-conflitos-com-o-conte%C3%BAdo-do-reposit%C3%B3rio-origem)
 
 
 ## Desistir de um commit porque não consegue fazer push
