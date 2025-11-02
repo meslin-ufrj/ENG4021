@@ -441,6 +441,12 @@ Usar o e‑mail *no‑reply* do GitHub (lembre-se de substituir `SEU_ID` e `SEU_
 git config user.email "SEU_ID+SEU_USERNAME@users.noreply.github.com"
 ```
 
+No meu caso, o comando ficaria assim (veja mais abaixo como obter o seu `user ID` - e espero que você saiba o seu `username`):
+
+```bash
+git config user.email "27902382+AlexandreMeslin@users.noreply.github.com"
+```
+
 Você consegue obter o seu ID com o seguinte comando:
 
 ```bash
