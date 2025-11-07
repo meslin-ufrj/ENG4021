@@ -62,10 +62,14 @@ python manage.py createsuperuser
 
 Certifique-se de que o superusuário foi criado corretamente: `Superuser created successfully.`.
 
-Inclua a seguinte linha no arquivo `MTCars.settings.py` para permitir acesso de qualquer lugar ao site:
+Inclua as seguintes linhas no arquivo `MTCars.settings.py` para permitir acesso de qualquer lugar ao site:
 
 ```python
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000', 
+    'http://localhost:8000',
+]
 ```
 
 Coloque o site no ar:
