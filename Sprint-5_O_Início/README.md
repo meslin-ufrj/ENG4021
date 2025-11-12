@@ -90,7 +90,7 @@ Para saber mais sobre autenticação, visite:
 - [https://docs.djangoproject.com/en/5.2/topics/auth/default/](https://docs.djangoproject.com/en/5.2/topics/auth/default/)
 - [https://docs.djangoproject.com/en/5.2/ref/contrib/auth/](https://docs.djangoproject.com/en/5.2/ref/contrib/auth/)
 
-O Django fornece um objeto User (models.User) com os seguintes campos, propriedades ou atributos:
+O Django fornece um objeto `User` (`models.User`) com os seguintes campos, propriedades ou atributos:
 
 | Propriedades | Descrição |
 |---|---|
@@ -109,7 +109,7 @@ O Django fornece um objeto User (models.User) com os seguintes campos, proprieda
 | is_authenticated | se está autenticado |
 | is_anonymous | se está como anonymous |
 
-Além das propriedades listadas acima, os seguintes métodos também fazem parte do objeto User. Os parâmetros, quando existirem, são informados dentro dos parentesis. Parâmetros opcionais com o valor default são exibidos no formato `parâmetro=valor_default`.
+Além das propriedades listadas acima, os seguintes métodos também fazem parte da classe `User`. Os parâmetros, quando existirem, são informados dentro dos parêntesis. Parâmetros opcionais com o valor default são exibidos no formato `parâmetro=valor_default`.
 
 | Método | Descrição |
 |---|---|
