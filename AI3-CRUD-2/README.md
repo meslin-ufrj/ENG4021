@@ -1,8 +1,8 @@
 # Roteiro CRUD-2
 
-# Atividade Individual 2
+# Atividade Individual 3
 
-> Toda atividade descrita nesse roteiro deve ser desenvolvida usando o seu repositório individual. NÃO use o repositório do seu time.
+> Toda atividade descrita nesse roteiro deve ser desenvolvida usando o seu repositório individual. **NÃO** use o repositório do seu time.
 
 # Objetivo
 
