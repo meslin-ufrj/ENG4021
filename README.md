@@ -28,8 +28,10 @@
 
 | Entreada | Descrição | Tópico |
 |---|---|---|
-| [GIT](./GIT/) | Sprint 1 | Uso do Github |
-| [HTML](./HTML/) | Atividade Individual 1 | HTML |
-| [MeuProjeto](./MeuProjeto/) | Atividade individual 2 | Django |
+| [GIT](./Sprint-1_GIT/) | Sprint 1 | Uso do Github |
+| [HTML](./AI1-HTML/) | Atividade Individual 1 | HTML |
+| [MeuProjeto](./AI2-MeuProjeto/) | Atividade individual 2 | Django |
+| [CRUD](./AI3-CRUD-1/) | Atividade individual 3 | CRUD (parte 1) |
+| [CRUD](./AI4-CRUD-2/) | Atividade individual 4 | CRUD (parte 2) |
 | [MeuSite](MeuSite) | deprecated | |
 
