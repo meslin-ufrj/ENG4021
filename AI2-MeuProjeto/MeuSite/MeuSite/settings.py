@@ -25,8 +25,14 @@ SECRET_KEY = "django-insecure-d=k%8q7g6gfd8bf9^hvkx6$&vt*44(^bfdb+ubp7o$9w8i41!3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000', 
+    'http://localhost:8000',
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -128,3 +134,6 @@ LOGIN_URL = '/accounts/login/'       # URL de login (padrão)
 # ATENÇÃO!!! Troque o valor da variável abaixo para que ela seja uma das rotas
 # válidas no seu arquivo MeuSite/curriculo/urls.py
 LOGIN_REDIRECT_URL = '/curriculo/spiff/'   # Para onde vai após login
+
+# Configurações de e-mail para recuperação de senha
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

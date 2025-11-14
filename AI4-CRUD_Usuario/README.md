@@ -188,3 +188,41 @@ def curriculo_spiff_v2(request):
 1. Tente visitar as páginas, principalmente a protegida. Você será encaminhado para a página de *login*, mas conseguirá visitar a página liberada.
 
 1. Faça um vídeo com essa demonstração e coloque no chat do Discord.
+
+### Trocar senha
+
+1. Crie um *link* na sua *home-page* para permitir que o usuário troque a senha. No *link*, lembre ao usuário que ele deve estar *logado* para poder trocar sua senha.
+
+    ```python
+    <a href="{% url 'password_change' %}">Trocar senha (somente para usuários logados)</a>
+    ```
+
+    > O *link* não deveria estar na *home-page*, mas não temos muitas páginas nessa atividade, então...
+
+    Teste a troca da senha.
+
+    > Observe que você está usando um *template* criado pelo **Django** para realizar a troca da senha. Se você quiser, veja como usar o seu *template*.
+
+### Recuperar a senha
+
+1. Edite o seu arquivo `settings.py` e inclua a definição da seguinte variável. Essa variável informa que o e-mail não deve ser enviado para um correio convencional e sim apenas exibido no terminal do Django
+
+    ```python
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ```
+
+1. Crie o seguinte *link* na sua página de *login*:
+
+    ```python
+    <a href="{% url 'password_reset' %}">Redefinir senha (para usuários que esqueceram a senha)</a>
+    ```
+
+1. Teste a recuperação de senha. 
+Como o *link* para recuperar a senha não vai ser enviado para o seu e-mail, veja o texto no terminal do Codespace, o mesmo onde o servido Django está sendo executado.
+
+    - Copie o *link* para um editor de textos.
+    O texto deve ser parecido com esse: `http://localhost:8000/accounts/reset/Mg/cz9ps9-658668afff0402561f6d835bfba522e1/`
+    - Troque a parte inicial (`http://localhost:8000`) pela URL do seu site.
+    Por exemplo, se a URl do seu site for `https://zany-yodel-p7q7q57x9rwc77g9-8000.app.github.dev`, o endereço de recuperação de senha deveria ser `https://zany-yodel-p7q7q57x9rwc77g9-8000.app.github.dev/accounts/reset/Mg/cz9ps9-658668afff0402561f6d835bfba522e1/`
+    - Copie e cole o endereço completo no seu navegador e informe a nova senha
+    - Tente entrar no site com a nova senha
