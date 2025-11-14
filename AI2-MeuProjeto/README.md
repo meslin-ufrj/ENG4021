@@ -1,4 +1,7 @@
 # Trabalhando com Django
+
+### Atividade Individual 2
+
 [https://www.djangoproject.com/](https://www.djangoproject.com/)
 
 ## Índice
