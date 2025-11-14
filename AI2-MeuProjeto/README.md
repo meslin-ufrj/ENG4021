@@ -1,6 +1,11 @@
 # Trabalhando com Django
 [https://www.djangoproject.com/](https://www.djangoproject.com/)
 
+## Índice
+
+- [Antes de tudo...](#antes-de-tudo)
+- [Problemas conhecidos](problemas)
+
 ## Antes de tudo...
 
 Você criou um repositório particular para a aula de HTML.
@@ -630,3 +635,21 @@ Explicação:
 |-m | run library module as a script (terminates option list) |
 | venv | (o primeiro) Nome do módulo a ser executado - esse módulo cria um *virtual environment* |
 | venv | (o segundo) Nome do *virtual environment* a ser criado |
+
+## Problemas conhecidos e suas soluções
+
+### CORS
+
+### Sintoma
+
+#### Solução
+
+```
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+        'https://localhost:8000', 
+        'http://localhost:8000',
+    ]
+'''
+CORS_ALLOW_ALL_ORIGINS = True
+```
