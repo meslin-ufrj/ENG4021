@@ -175,6 +175,14 @@ https://effective-space-q57x4g4c499-8000.app.github.dev/admin/
 
 1. Configure as origens aceitáveis para o Django incluindo a seguinte linha no seu arquivo `settings.py`:
     ```python
+    ALLOWED_HOSTS = ['*']
+
+    CSRF_TRUSTED_ORIGINS = [
+        'https://localhost:8000', 
+        'http://localhost:8000',
+    ]
+
+    CORS_ALLOW_ALL_ORIGINS = True
     CORS_ORIGIN_ALLOW_ALL = True
     ```
 

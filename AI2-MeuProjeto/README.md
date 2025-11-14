@@ -13,9 +13,10 @@
 - [Funcionamento](#funcionamento)
 - [Configurando o ambiente](#configurando-o-ambiente)
 - [Criando o site](#criando-o-site)
-Apêndices
-- [Problemas conhecidos](#problemas)
+
+**Apêndices**
 - [Apêndice A - Criando um ambiente virtual](#apendice-a)
+- [Apêndice B - Problemas conhecidos e suas "soluções"](#problemas)
 
 ## Antes de tudo...
 
@@ -647,7 +648,7 @@ Explicação:
 | venv | (o primeiro) Nome do módulo a ser executado - esse módulo cria um *virtual environment* |
 | venv | (o segundo) Nome do *virtual environment* a ser criado |
 
-##  Apêndice B - Problemas conhecidos e suas soluções
+##  Apêndice B - Problemas conhecidos e suas "soluções"
 
 ### CORS
 
@@ -659,13 +660,19 @@ Qualquer problema ligado ao CORS (Cross-Origin Resource Sharing)
 
 Edite o seu arquivo `settings.py` e inclua ou modifique as seguintes variáveis:
 
-```
+```python
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-        'https://localhost:8000', 
-        'http://localhost:8000',
-    ]
+    'https://localhost:8000', 
+    'http://localhost:8000',
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
+```
+
+Verifique também se você incluiu o seguinte comando Django no seu formulário:
+
+```django
+{% csrf_token %}
 ```
