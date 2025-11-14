@@ -629,7 +629,7 @@ MeuProjeto/
 
 # Apendices
 
-## Apendice A ---- Criando um ambiente virtual
+## Apendice A - Criando um ambiente virtual
 
 Criando um venv:
 
@@ -647,20 +647,25 @@ Explicação:
 | venv | (o primeiro) Nome do módulo a ser executado - esse módulo cria um *virtual environment* |
 | venv | (o segundo) Nome do *virtual environment* a ser criado |
 
-##  Apêndice B -- Problemas conhecidos e suas soluções
+##  Apêndice B - Problemas conhecidos e suas soluções
 
 ### CORS
 
 ### Sintoma
 
+Qualquer problema ligado ao CORS (Cross-Origin Resource Sharing)
+
 #### Solução
+
+Edite o seu arquivo `settings.py` e inclua ou modifique as seguintes variáveis:
 
 ```
 ALLOWED_HOSTS = ['*']
+
 CSRF_TRUSTED_ORIGINS = [
         'https://localhost:8000', 
         'http://localhost:8000',
     ]
-'''
+
 CORS_ALLOW_ALL_ORIGINS = True
 ```
