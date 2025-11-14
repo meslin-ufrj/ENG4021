@@ -7,7 +7,15 @@
 ## Índice
 
 - [Antes de tudo...](#antes-de-tudo)
-- [Problemas conhecidos](problemas)
+- [Entendendo um pouco sobre o Django](#entendendo-um-pouco-sobre-o-django)
+- [Fluxo de requisição e resposta (request/response)](#fluxo-de-requisição-e-resposta-requestresponse)
+- [Árvore de diretórios e arquivos (mais importantes)](#árvore-de-diretórios-e-arquivos-mais-importantes)
+- [Funcionamento](#funcionamento)
+- [Configurando o ambiente](#configurando-o-ambiente)
+- [Criando o site](#criando-o-site)
+Apêndices
+- [Problemas conhecidos](#problemas)
+- [Apêndice A - Criando um ambiente virtual](#apendice-a)
 
 ## Antes de tudo...
 
@@ -621,7 +629,7 @@ MeuProjeto/
 
 # Apendices
 
-## Apendice A
+## Apendice A ---- Criando um ambiente virtual
 
 Criando um venv:
 
@@ -639,7 +647,7 @@ Explicação:
 | venv | (o primeiro) Nome do módulo a ser executado - esse módulo cria um *virtual environment* |
 | venv | (o segundo) Nome do *virtual environment* a ser criado |
 
-## Problemas conhecidos e suas soluções
+##  Apêndice B -- Problemas conhecidos e suas soluções
 
 ### CORS
 
