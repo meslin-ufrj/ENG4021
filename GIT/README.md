@@ -224,6 +224,7 @@ git push origin main
 
 # Problemas conhecidos e suas "soluções"
 
+- [Usuário não conhecido no repositório local](#usuário-não-conhecido-no-repositório-local)
 - [Desistir de um commit porque não consegue fazer push](#desistir-de-um-commit-porque-n%C3%A3o-consegue-fazer-push)
 - [Origem e local divergem](#origem-e-local-divergem)
 - [O mesmo arquivo editado na origem e no clone](#o-mesmo-arquivo-editado-na-origem-e-no-clone)
@@ -231,6 +232,46 @@ git push origin main
 - [O push vai tornar público um e-mail privado](#o-push-vai-tornar-p%C3%BAblico-um-e-mail-privado)
 - [O branch do PR tem conflitos com o conteúdo do repositório origem](#o-branch-do-pr-tem-conflitos-com-o-conte%C3%BAdo-do-reposit%C3%B3rio-origem)
 
+## Usuário não conhecido no repositório local
+
+### Sintoma
+
+```
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+```
+
+### Solução 1
+
+Faça login de forma global.
+Vai afetar todos os seus repositórios locais.
+> (as aspas fazem parte do comando)
+
+```bash
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
+
+### Solução 2
+
+Faça login apenas no repositório corrente.
+> (as aspas fazem parte do comando)
+
+```bash
+git config user.name "Seu Nome"
+git config user.email "seu_email@dominio.com"
+```
+
+---
 
 ## Desistir de um commit porque não consegue fazer push
 
