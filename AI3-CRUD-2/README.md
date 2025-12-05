@@ -148,6 +148,8 @@ Os arquivos estão disponíveis no nosso repositório, no mesmo lugar onde você
 
 Migre novamente a base de dados, mas dessa vez, crie um novo conjunto de migrações porque você criou um novo modelo:
 
+> Sempre que você modificar algum arquivo `models.py`, você vai ter que realizar esse passo.
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
@@ -156,6 +158,11 @@ python manage.py migrate
 Certifique-se de que ambos os comandos executaram com sucesso.
 
 Execute o comando a seguir para copiar os dados do banco de dados `MTCars.sqlite3` (que não vamos mais usar) para o bando de dados `db.sqlite3`:
+
+> Esse passo não faz parte necessariamente da criação do banco de dados.
+> Ele foi necessário porque os dados dos carros estão em outro arquivo.
+> Nós estamos apenas passando os dados de um arquivo para o outro.
+> Você poderia fazer a mesma coisa usando a interface administrativa do seu site, ou seja, acrescentando `/admin/` no final da *URL* do seu *site*.
 
 ```bash
 python CopiaBaseDados.py
@@ -192,6 +199,14 @@ Use o seguinte conteúdo:
 
     <h1>Lista de Carros</h1>
 
+    <!-- 
+    Esse é o formulário básico para busca.
+    Você deve usar a tag form e colocar os campos referentes a busca dentro dela.
+    Lembre-se de usar o atributo method para enviar o formulário como POST.
+    Para o Django aceitar de volta o formulário, você tem que incluir o comando {% csrf_token %}
+    Veja que o formulário deve ter um botão de envio também.
+    Modifique os campos input e button para obter o aspecto que você quer.
+    -->
     <form action="" method="post">
         {% csrf_token %}
         <input type="text" name="search" placeholder="Buscar carro..." value="{{ search_query }}">
@@ -259,6 +274,9 @@ def searchf(request):
             'search_query': search_query,   # o texto pesquisado
             'carros': carros                # os resultados da pesquisa
         }
+        # No meu caso, eu mostro a mesma página,
+        # mas você pode usar outro template para mostrar uma página diferente.
+        # Basta trocar o nome do arquivo HTML no parâmetro da função render a seguir.
         return render(request, 'CarsApp/home.html', contexto)
 ```
 
@@ -380,4 +398,78 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+```
+
+## Dica Especial
+
+Se você quiser exibir os dados de apenas um carro em uma página diferente do que você já criou, vamos modificar o template para criar um link para um carro em particular.
+
+Transforme o nome do carro em um link. Antes você tinha esse código no arquivo `templates/CarsApp/home.html`:
+
+```html
+<td>{{ carro.name }}</td>
+```
+Modifique para esse código para incluir um link com o `id` do carro:
+
+```html
+<td><a href="{% url 'CarsApp:detalhes' carro.id %}">{{ carro.name }}</a></td>
+```
+
+Crie uma nova view para exibir os detalhes do carro.
+Edite o arquivo `CarsApp/views.py` e inclua a seguinte `view`:
+
+```python
+def detalhes(request, carro_id):
+    carro = MTCars.objects.get(id=carro_id)
+    # Ao criar uma entrada no dicionário contexto com o nome carro (string constante),
+    # você vai criar uma variável carro no template associado pela função render.
+    # Essa variável é um objeto carro, com todas as suas propriedades.
+    contexto = {
+        'carro': carro
+    }
+    return render(request, 'CarsApp/detalhes.html', contexto)
+```
+
+Crie o arquivo `CarsApp/templates/CarsApp/detalhes.html` com o seguinte conteúdo:
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Carro</title>
+    <link rel="stylesheet" href="{% static 'CarsApp/css/estilo.css' %}">
+</head>
+<body>
+    <!--
+    Aqui vamos usar a variável carro criada no view.
+    Essa variável é um objeto carro e tem as propriedades de um carro.
+    -->
+    <h1>Detalhes do Carro: {{ carro.name }}</h1>
+    <ul>
+        <li><strong>MPG:</strong> {{ carro.mpg }}</li>
+        <li><strong>Cilindros:</strong> {{ carro.cyl }}</li>
+        <li><strong>Disposição:</strong> {{ carro.disp }}</li>
+        <li><strong>Potência:</strong> {{ carro.hp }}</li>
+        <li><strong>Peso:</strong> {{ carro.wt }}</li>
+        <li><strong>Aceleração:</strong> {{ carro.qsec }}</li>
+        <li><strong>Câmbio:</strong> {{ carro.am }}</li>
+        <li><strong>Marchas:</strong> {{ carro.gear }}</li>
+    </ul>
+    <a href="{% url 'CarsApp:home' %}">Voltar à lista de carros</a>
+</body>
+</html>
+```
+
+Registre a nova rota no arquivo `CarsApp/urls.py`.
+Inclua a seguinte entrada na lista `urlpatterns`:
+
+```python
+urlpatterns = [
+    # já deve ter alguma coisa aqui
+    # apenas inclua a rota abaixo
+    path("detalhes/<int:carro_id>/", views.detalhes, name="detalhes"),  # nova rota
+]
 ```

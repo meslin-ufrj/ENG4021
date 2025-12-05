@@ -34,7 +34,7 @@
         <tbody>
             {% for carro in carros %}
             <tr>
-                <td>{{ carro.name }}</td>
+                <td><a href="{% url 'CarsApp:detalhes' carro.id %}">{{ carro.name }}</a></td>
                 <td>{{ carro.mpg }}</td>
                 <td>{{ carro.cyl }}</td>
                 <td>{{ carro.disp }}</td>
