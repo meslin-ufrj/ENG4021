@@ -35,3 +35,18 @@
 | [CRUD](./AI4-CRUD-2/) | Atividade individual 4 | CRUD (parte 2) |
 | [MeuSite](MeuSite) | deprecated | |
 
+## Problemas e soluções
+
+### Python
+
+- [Qualquer problema relativo a CORS ou CSRF](https://github.com/AlexandreMeslin/ENG4021/tree/main/AI2-MeuProjeto#cors)
+
+### Git
+
+- [Usuário não conhecido no repositório local](GIT/README.md#usuário-não-conhecido-no-repositório-local)
+- [Desistir de um commit porque não consegue fazer push](GIT/README.md#desistir-de-um-commit-porque-n%C3%A3o-consegue-fazer-push)
+- [Origem e local divergem](GIT/README.md#origem-e-local-divergem)
+- [O mesmo arquivo editado na origem e no clone](GIT/README.md#o-mesmo-arquivo-editado-na-origem-e-no-clone)
+- [Alterações locais não commitadas](GIT/README.md#altera%C3%A7%C3%B5es-locais-n%C3%A3o-commitadas)
+- [O push vai tornar público um e-mail privado](GIT/README.md#o-push-vai-tornar-p%C3%BAblico-um-e-mail-privado)
+- [O branch do PR tem conflitos com o conteúdo do repositório origem](GIT/README.md#o-branch-do-pr-tem-conflitos-com-o-conte%C3%BAdo-do-reposit%C3%B3rio-origem)

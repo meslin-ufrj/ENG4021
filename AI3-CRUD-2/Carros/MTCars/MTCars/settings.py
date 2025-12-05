@@ -123,4 +123,14 @@ STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+'''
+Estas duas variáveis foram adicionadas para permitir requisições
+de origens diferentes durante o desenvolvimento da API.
+Em produção, é importante configurar essas variáveis de forma
+mais restritiva para garantir a segurança da aplicação.
+'''
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000', 
+    'http://localhost:8000',
+]

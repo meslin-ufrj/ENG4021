@@ -27,13 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://localhost:8000', 
-    'http://localhost:8000',
-]
-
-CORS_ALLOW_ALL_ORIGINS = True
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -137,3 +130,15 @@ LOGIN_REDIRECT_URL = '/curriculo/spiff/'   # Para onde vai após login
 
 # Configurações de e-mail para recuperação de senha
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+'''
+Estas duas variáveis foram adicionadas para permitir requisições
+de origens diferentes durante o desenvolvimento da API.
+Em produção, é importante configurar essas variáveis de forma
+mais restritiva para garantir a segurança da aplicação.
+'''
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000', 
+    'http://localhost:8000',
+]

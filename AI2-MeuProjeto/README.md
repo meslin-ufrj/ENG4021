@@ -630,7 +630,7 @@ MeuProjeto/
 
 # Apendices
 
-## Apendice A - Criando um ambiente virtual
+## Apendice A - Criando um ambiente virtual <a id='apendice-a'></a>
 
 Criando um venv:
 
@@ -648,11 +648,13 @@ Explicação:
 | venv | (o primeiro) Nome do módulo a ser executado - esse módulo cria um *virtual environment* |
 | venv | (o segundo) Nome do *virtual environment* a ser criado |
 
-##  Apêndice B - Problemas conhecidos e suas "soluções"
+##  Apêndice B - Problemas conhecidos e suas "soluções" <a id='problemas'></a>
+
+- [Qualquer problema relativo a CORS ou CSRF](https://github.com/AlexandreMeslin/ENG4021/tree/main/AI2-MeuProjeto#cors)
 
 ### CORS
 
-### Sintoma
+#### Sintoma
 
 Qualquer problema ligado ao CORS (Cross-Origin Resource Sharing)
 
@@ -662,13 +664,11 @@ Edite o seu arquivo `settings.py` e inclua ou modifique as seguintes variáveis:
 
 ```python
 ALLOWED_HOSTS = ['*']
-
+CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost:8000', 
     'http://localhost:8000',
 ]
-
-CORS_ALLOW_ALL_ORIGINS = True
 ```
 
 Verifique também se você incluiu o seguinte comando Django no seu formulário:
