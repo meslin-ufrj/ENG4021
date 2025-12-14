@@ -1,12 +1,36 @@
 # Tarefa para aprender a usar o Github e o Codespace
 
-> Tarefa
+> Nível de dificuldade: Difícil (por membro do time)
+
+Nessa tarefa, o time irá aprender o uso básico do Git, Github e CodeSpace.
+Iremos criar uma calculadora de quatro operações: `+`, `-`, `*` e `/` para exemplificar os diversos passos.
 
 > Essa tarefa deve ser realizada em equipe de 2, 3, 4 ou 5 alunos.
 
-> Antes de implementar essa tarefa, estude um pouco sobre o uso do Github e do Codespace. Em caso de dúvidas ou problemas, consulte também [GIT](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT).
+Antes de implementar essa tarefa, estude um pouco sobre o uso do Github e do Codespace.
 
-Crie uma calculadora de quatro operações: `+`, `-`, `*` e `/`.
+Bibliografia recomendada:
+- [Hello World - GitHub Docs](https://docs.github.com/en/get-started/start-your-journey/hello-world)
+- [Using Git - GitHub Docs](https://docs.github.com/en/get-started/using-git)
+
+Em caso de dúvidas ou problemas, consulte também [GIT](https://github.com/AlexandreMeslin/ENG4021/tree/main/GIT).
+
+## Todos os alunos
+
+Criar uma conta PRO no GitHub.
+Se você já tem uma conta, transforme a sua conta em *PRO*.
+
+### Criando a conta (se você já tem uma conta no GitHub, pode pular essa etapa)
+
+- Acesse o site [github.com](https://github.com/).
+
+- Clique em `Sign up` no canto superior direito.
+
+    ![GitHub Signup](img/github-signup.png)
+
+- Preencha os dados necessários.
+Use o seu e-mail da PUC para criar uma conta *PRO*.
+
 
 ## Aluno 1:
 
