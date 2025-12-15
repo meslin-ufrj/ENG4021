@@ -2,9 +2,13 @@
 
 ### Atividade Individual 1
 
+Nessa atividade, você irá cria duas páginas HTML.
+A primeira página será sobre o currículo do valoroso astronauta Spiff.
+A segunda página pode ser sobre o seu currículo mesmo.
+
 ## HTML
 
-1. Crie um repositório - não use o mesmo repositório do seu projeto com o seu time. Ao criar o repositório, inclua o arquivo `README.md` e o arquivo `.gitignore` para `Python`.
+1. Crie um repositório na sua conta do **GitHub** - **NÃO** use o mesmo repositório do seu projeto com o seu time. Ao criar o repositório, inclua o arquivo `README.md` e o arquivo `.gitignore` para `Python`.
 
 1. Abra o Codespace do seu repositório.
 
