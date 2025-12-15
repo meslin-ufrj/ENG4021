@@ -1,5 +1,4 @@
 # Roteiro de HTML/CSS
-
 ### Atividade Individual 1
 
 Nessa atividade, você irá cria duas páginas HTML.
