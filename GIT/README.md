@@ -544,6 +544,73 @@ Ao tentar fazer o *merge* você se depara com a seguinte mensagem de erro:
 
 ![Confirma o merge](img/GIT-merge8.png)
 
+## Merge não terminado
+
+### Descrição
+
+O **Git** iniciou um *merge* anteriormente e ele não foi finalizado, por isso existe o arquivo interno `MERGE_HEAD`.
+Enquanto isso não for resolvido, nenhum git pull ou novo merge é permitido.
+
+### Sintoma
+
+```
+> git pull --tags origin main
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+```
+
+### Solução
+
+Verifique se você já resolveu todos os conflitos com o comando:
+
+```bash
+git status
+```
+
+Saída esperada no caso de não haver mais conflitos
+
+```bash
+git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 6 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../AI1-HTML/README.md
+        modified:   ../Sprint-1_GIT/README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../Sprint-1_GIT/img/git-ahead-behind.png
+```
+
+Se você ainda não resolveu todos os conflitos, verifique quais arquivos ainda devem ser analisados e resolva todos os conflitos.
+
+Termine o merge com os seguintes comandos (leia atentamente o que cada um comando está precisando que você execute):
+
+```bash
+git commit
+git pull --tags origin main
+```
+
+Saída esperada:
+
+```bash
+git commit
+[main c4d0aaf] Merge branch 'main' of https://github.com/AlexandreMeslin/ENG4021
+@AlexandreMeslin ➜ /workspaces/ENG4021/GIT (main) $ git pull --tags origin main
+From https://github.com/AlexandreMeslin/ENG4021
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+```
+
 ---
 
 # Comandos utilizados
