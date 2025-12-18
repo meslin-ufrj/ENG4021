@@ -30,8 +30,8 @@ O fluxo descrito a seguir usa **forks** (cópias individuais no GitHub) e **GitH
 
 ## Todos os alunos
 
-Criar uma conta PRO no GitHub.
-Se você já tem uma conta, transforme a sua conta em *PRO*.
+Criar uma conta *PRO* no **GitHub**.
+Se você já tem uma conta, transforme a sua conta em [*PRO*](#transformando-a-sua-conta-em-pro).
 
 ### Criando a conta (se você já tem uma conta no GitHub, pode pular essa etapa)
 
@@ -51,12 +51,15 @@ Use o seu e-mail da PUC para criar uma conta *PRO*.
 
 - Clique em <svg aria-hidden="true" focusable="false" class="octicon octicon-gear" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="M8 0a8.2 8.2 0 0 1 .701.031C9.444.095 9.99.645 10.16 1.29l.288 1.107c.018.066.079.158.212.224.231.114.454.243.668.386.123.082.233.09.299.071l1.103-.303c.644-.176 1.392.021 1.82.63.27.385.506.792.704 1.218.315.675.111 1.422-.364 1.891l-.814.806c-.049.048-.098.147-.088.294.016.257.016.515 0 .772-.01.147.038.246.088.294l.814.806c.475.469.679 1.216.364 1.891a7.977 7.977 0 0 1-.704 1.217c-.428.61-1.176.807-1.82.63l-1.102-.302c-.067-.019-.177-.011-.3.071a5.909 5.909 0 0 1-.668.386c-.133.066-.194.158-.211.224l-.29 1.106c-.168.646-.715 1.196-1.458 1.26a8.006 8.006 0 0 1-1.402 0c-.743-.064-1.289-.614-1.458-1.26l-.289-1.106c-.018-.066-.079-.158-.212-.224a5.738 5.738 0 0 1-.668-.386c-.123-.082-.233-.09-.299-.071l-1.103.303c-.644.176-1.392-.021-1.82-.63a8.12 8.12 0 0 1-.704-1.218c-.315-.675-.111-1.422.363-1.891l.815-.806c.05-.048.098-.147.088-.294a6.214 6.214 0 0 1 0-.772c.01-.147-.038-.246-.088-.294l-.815-.806C.635 6.045.431 5.298.746 4.623a7.92 7.92 0 0 1 .704-1.217c.428-.61 1.176-.807 1.82-.63l1.102.302c.067.019.177.011.3-.071.214-.143.437-.272.668-.386.133-.066.194-.158.211-.224l.29-1.106C6.009.645 6.556.095 7.299.03 7.53.01 7.764 0 8 0Zm-.571 1.525c-.036.003-.108.036-.137.146l-.289 1.105c-.147.561-.549.967-.998 1.189-.173.086-.34.183-.5.29-.417.278-.97.423-1.529.27l-1.103-.303c-.109-.03-.175.016-.195.045-.22.312-.412.644-.573.99-.014.031-.021.11.059.19l.815.806c.411.406.562.957.53 1.456a4.709 4.709 0 0 0 0 .582c.032.499-.119 1.05-.53 1.456l-.815.806c-.081.08-.073.159-.059.19.162.346.353.677.573.989.02.03.085.076.195.046l1.102-.303c.56-.153 1.113-.008 1.53.27.161.107.328.204.501.29.447.222.85.629.997 1.189l.289 1.105c.029.109.101.143.137.146a6.6 6.6 0 0 0 1.142 0c.036-.003.108-.036.137-.146l.289-1.105c.147-.561.549-.967.998-1.189.173-.086.34-.183.5-.29.417-.278.97-.423 1.529-.27l1.103.303c.109.029.175-.016.195-.045.22-.313.411-.644.573-.99.014-.031.021-.11-.059-.19l-.815-.806c-.411-.406-.562-.957-.53-1.456a4.709 4.709 0 0 0 0-.582c-.032-.499.119-1.05.53-1.456l.815-.806c.081-.08.073-.159.059-.19a6.464 6.464 0 0 0-.573-.989c-.02-.03-.085-.076-.195-.046l-1.102.303c-.56.153-1.113.008-1.53-.27a4.44 4.44 0 0 0-.501-.29c-.447-.222-.85-.629-.997-1.189l-.289-1.105c-.029-.11-.101-.143-.137-.146a6.6 6.6 0 0 0-1.142 0ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9.5 8a1.5 1.5 0 1 0-3.001.001A1.5 1.5 0 0 0 9.5 8Z"></path></svg> Settings.
 
-- Expanda `Billing and licensing`, no menu lateral esquerdo.
+- Expanda <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-credit-card" fill='currentColor'><path d="M10.75 9a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Z"></path><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25ZM14.5 6.5h-13v5.75c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25Zm0-2.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25V5h13Z"></path></svg> **Billing and licensing**, no menu lateral esquerdo.
 
 - Clique em `Education benefits`.
 
-- Clique no botão `Start an application` e siga as instruções.
-Use o documento de inscrição fornecido pelo SAU para comprovar que você é aluno da PUC.
+- Clique no botão verde `Start an application` e siga as instruções.
+Use o documento de inscrição fornecido pelo SAU para comprovar que você é aluno da PUC Rio.
+
+
+
 
 ## Aluno 1: Criar repositório
 
@@ -75,6 +78,9 @@ Esse diretório será utilizado para criar a calculadora.
     - `divide.dividef`
 - Aceitar os PRs dos componentes do time e fazer o *merge*.
 
+
+
+
 ## Aluno 2, 3, 4 e 5: Criar *fork*
 
 **Criar um `fork` do repositório original.**
@@ -92,7 +98,7 @@ Clicar no botão
 
 Na página seguinte, basta clicar no botão verde **Create fork**.
 
-O GitHub criará uma cópia pessoal do repositório, por exemplo (aluno2, aluno3, ... não existem, vai aparecer a sua conta no Github):
+O **GitHub** criará uma cópia pessoal do repositório, por exemplo (aluno2, aluno3, ... não existem, vai aparecer a sua conta no Github):
 
 - `https://github.com/aluno2/ENG4021`
 - `https://github.com/aluno3/ENG4021`
@@ -103,9 +109,14 @@ Verifique se o endereço que aparece no seu navegador agora é um endereço da s
 
 Antes de começar a trabalhar, siga sempre essas [dicas](#dicas-muito-úteis-ou-não-só-vai-depender-de-você).
 
+
+
+
 ## Aluno 1, 2, 3, 4 e 5: Abrir o repositório `fork` no Codespace
 
-1. No repositório principal (`aluno1/ENG4021`) ou no fork (`aluno2/ENG4021`), conforme o caso, clique em **Code → Codespaces → Create codespace on main**.
+1. No repositório principal (`aluno1/ENG4021`) ou no fork (`aluno2/ENG4021`), conforme o caso, clique em **Code → Codespaces**
+    - Se não existir um Codespace: **Create codespace on main**.
+    - Se já existir um Codespace, clicar no nome do Codespace.
 
     ![Criar codespace](./img/GIT-TelaCriarCodespace.png)
 
@@ -195,9 +206,19 @@ if __name__ == "__main__":
 
 Na barra de ícones localizada no lado esquerdo, note que o ícone 
 <svg aria-hidden="true" focusable="false" class="octicon octicon-git-branch" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align:text-bottom"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>
-`Source Control` (provalvemente) deve estar sendo exibido com um número dentro de um círculo azul.
+**Source Control** (provalvemente) deve estar sendo exibido com um número dentro de um círculo azul.
 
 ![Source Control](img/github-source-control-30.png)
+
+Clique no ícone do `Source Control` ou digite `Ctrl+Shift+G`.
+
+> Antes de fazer qualquer `Commit`, verifique sempre se você está com a versão atual do repositório clicando nos ícones com as setas para baixo, da esquerda para a direita. Veja a figura a seguir:
+
+![Codespace fetch pull push](img/codespace-fetch-pull-push.png)
+
+Se tudo correr bem, escreva um texto na caixa acima do botão verde descrevendo em poucas palavras as modificações que você implementou recentemente (nesse *commit*).
+Clique em `Commit`
+
 
 - Realizar um PR depois de tudo testado e funcionando.
 - Depois que o aluno 1 tiver feito o *merge* de todos os PR, atualizar o seu `fork`.
