@@ -174,7 +174,7 @@ Quando o merge é feito, as mudanças entram no repositório principal.
 
 ## Atualizar o fork com o repositório principal
 
-Quando aluno1 aceita um PR ou altera algo diretamente, os outros forks ficam desatualizados.
+Quando aluno1 aceita um PR ou alterar algo diretamente, os outros forks ficam desatualizados.
 Cada aluno deve sincronizar o fork com o original antes de novas modificações:
 
 ```bash
