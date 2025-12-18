@@ -217,7 +217,7 @@ Clique no ícone do `Source Control` ou digite `Ctrl+Shift+G`.
 ![Codespace fetch pull push](img/codespace-fetch-pull-push.png)
 
 Se tudo correr bem, escreva um texto na caixa acima do botão verde descrevendo em poucas palavras as modificações que você implementou recentemente (nesse *commit*).
-Clique em `Commit`
+Clique em `Commit` e depois em `Sync changes`.
 
 
 - Realizar um PR depois de tudo testado e funcionando.
