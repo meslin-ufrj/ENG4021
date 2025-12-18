@@ -217,11 +217,75 @@ Clique no ícone do `Source Control` ou digite `Ctrl+Shift+G`.
 ![Codespace fetch pull push](img/codespace-fetch-pull-push.png)
 
 Se tudo correr bem, escreva um texto na caixa acima do botão verde descrevendo em poucas palavras as modificações que você implementou recentemente (nesse *commit*).
-Clique em `Commit` e depois em `Sync changes`.
+Clique em `Commit` e depois em `Sync Changes`.
+
+Agora o seu repositório está atualizado e o seu trabalho definitivamente salvo.
+Antes disso, ele apenas exitia no *container* criado para o seu Codespace.
+Ou seja, se o seu Codespace fosse apagado ou destruído, o seu trabalho iria junto!
 
 
-- Realizar um PR depois de tudo testado e funcionando.
-- Depois que o aluno 1 tiver feito o *merge* de todos os PR, atualizar o seu `fork`.
+
+
+## Criar um Pull Request (PR)
+
+No GitHub (aluno2/ENG4021):
+
+1. Clique no botão <svg aria-hidden="true" focusable="false" class="octicon octicon-git-pull-request" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> Contribute e depois em `Open pull request`.
+
+    ![Abrir um PR](./img/GIT-TelaCriarPR.png)
+
+1. Verifique:
+
+    ```
+    base repository: aluno1/ENG4021     ← destino (repositório principal)
+    head repository: aluno2/ENG4021     ← origem (seu fork)
+    ```
+
+1. Adicione um título e uma descrição das mudanças.
+
+    ![Abrir um PR](./img/GIT-TelaCriarPR2.png)
+
+1. Clique em `Create pull request`.
+
+    ![Abrir um PR](./img/GIT-TelaCriarPR3.png)
+
+
+## Revisão pelo dono do repositório
+
+O aluno1 verá o PR em:
+
+```bash
+https://github.com/aluno1/ENG4021/pulls
+```
+
+O **PR** também pode ser visto pela interface Web observando o link `Pull request`. No seu lado direito, você verá a quantidade de PRs pendentes.
+
+![Aceitar PR](./img/GIT-TelaAceitarPR.png)
+
+Ele pode:
+
+- Analisar o código modificado.
+- Comentar ou solicitar alterações.
+- Fazer o merge quando estiver tudo certo.
+
+Quando o merge é feito, as mudanças entram no repositório principal.
+
+1. Clique no link `Pull requests`
+
+    ![Aceitar PR](./img/GIT-TelaAceitarPR2.png)
+
+1. Clique no PR que você deseja realizar o merge:
+
+    ![Aceitar PR](./img/GIT-TelaAceitarPR3.png)
+
+1. Se não houver problemas, clique em `Merge pull request` e depois em `Confirm merge` para confirmar o *merge* .
+
+    ![Aceitar PR](./img/GIT-TelaAceitarPR4.png)
+
+## Atualizar o fork com o repositório principal
+
+Quando aluno1 aceita um PR ou alterar algo diretamente, os outros forks ficam desatualizados.
+Cada aluno deve sincronizar o fork com o original antes de novas modificações:
 
 ## Todos os alunos
 
