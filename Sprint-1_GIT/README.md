@@ -210,7 +210,7 @@ Na barra de ícones localizada no lado esquerdo, note que o ícone
 
 ![Source Control](img/github-source-control-30.png)
 
-Clique no ícone do `Source Control` ou digite `Ctrl+Shift+G`.
+Clique no ícone do <svg aria-hidden="true" focusable="false" class="octicon octicon-git-branch" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align:text-bottom"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg> **Source Control** ou digite `Ctrl+Shift+G`.
 
 > Antes de fazer qualquer `Commit`, verifique sempre se você está com a versão atual do repositório clicando nos ícones com as setas para baixo, da esquerda para a direita. Veja a figura a seguir:
 
@@ -230,7 +230,7 @@ Ou seja, se o seu Codespace fosse apagado ou destruído, o seu trabalho iria jun
 
 No GitHub (aluno2/ENG4021):
 
-1. Clique no botão <svg aria-hidden="true" focusable="false" class="octicon octicon-git-pull-request" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> Contribute e depois em `Open pull request`.
+1. Clique no botão <svg aria-hidden="true" focusable="false" class="octicon octicon-git-pull-request" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> Contribute e depois no botão verde `Open pull request`.
 
     ![Abrir um PR](./img/GIT-TelaCriarPR.png)
 
@@ -250,6 +250,8 @@ No GitHub (aluno2/ENG4021):
     ![Abrir um PR](./img/GIT-TelaCriarPR3.png)
 
 
+
+
 ## Revisão pelo dono do repositório
 
 O aluno1 verá o PR em:
@@ -258,7 +260,7 @@ O aluno1 verá o PR em:
 https://github.com/aluno1/ENG4021/pulls
 ```
 
-O **PR** também pode ser visto pela interface Web observando o link `Pull request`. No seu lado direito, você verá a quantidade de PRs pendentes.
+O **PR** também pode ser visto pela interface Web observando o link <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-git-pull-request UnderlineNav-octicon d-none d-sm-inline" fill='currentColor'><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> **Pull requests**. No seu lado direito, você verá a quantidade de PRs pendentes.
 
 ![Aceitar PR](./img/GIT-TelaAceitarPR.png)
 
@@ -270,11 +272,11 @@ Ele pode:
 
 Quando o merge é feito, as mudanças entram no repositório principal.
 
-1. Clique no link `Pull requests`
+1. Clique no link <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-git-pull-request UnderlineNav-octicon d-none d-sm-inline" fill='currentColor'><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"></path></svg> **Pull requests**.
 
     ![Aceitar PR](./img/GIT-TelaAceitarPR2.png)
 
-1. Clique no PR que você deseja realizar o merge:
+1. Clique no **PR** que você deseja realizar o *merge*:
 
     ![Aceitar PR](./img/GIT-TelaAceitarPR3.png)
 
@@ -282,23 +284,41 @@ Quando o merge é feito, as mudanças entram no repositório principal.
 
     ![Aceitar PR](./img/GIT-TelaAceitarPR4.png)
 
+
+
+
 ## Atualizar o fork com o repositório principal
 
-Quando aluno1 aceita um PR ou alterar algo diretamente, os outros forks ficam desatualizados.
-Cada aluno deve sincronizar o fork com o original antes de novas modificações:
+Quando aluno1 aceita um PR ou alterar algo diretamente, os outros *forks* ficam desatualizados.
+Cada aluno deve sincronizar o *fork* com o original antes de novas modificações.
+Para isso, basta clicar no botão <svg aria-hidden="true" focusable="false" class="octicon octicon-sync" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align: text-bottom;"><path d="M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z"></path></svg> **Sync fork** e depois no botão verde `Update branch`.
+
+![Sync fork - Update branch](img/GIT-TelaSyncFork2.png)
+
+> Na próxima vez que você for usar o Codespace, lembre-se de clicar nos botões com a seta para baixo, da esquerda para a direita, do <svg aria-hidden="true" focusable="false" class="octicon octicon-git-branch" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" display="inline-block" overflow="visible" style="vertical-align:text-bottom"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg> **Source Control**.
+
+
+
 
 ## Todos os alunos
 
 - Testar o funcionamento da calculadora usando o Codespace
-- Criar um card no Kanban.
-- Incluir um *print* da calculadora funcionando.
-- Incluir um *print* do diretório `Calculadora` como evidência de que a tarefa foi concluída.
+- Criar um card no Kanban. No card:
+    - Incluir um *print* da calculadora funcionando.
+    - Incluir um *print* do diretório `Calculadora` como evidência de que a tarefa foi concluída.
 
-## Dicas (muito úteis ou não, só vai depender de você)
+
+
+
+
+# Dicas (muito úteis ou não, só vai depender de você)
 
 - [Relação do seu *branch* com o original](#relação-do-seu-branch-com-o-original)
 
-### Relação do seu *branch* com o original
+
+
+
+## Relação do seu *branch* com o original
 
 > O texto a seguir considera que você já sincronizou o seu Codespace com o seu repositório.
 
